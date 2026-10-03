@@ -7,11 +7,10 @@
 ## Floting point or float
 - Decimals
 
-# Built in functions
-- Handy tools to use, dont need to know how it works but focus on when to call. 
-
-## Print(argument)
-- Use it by typing in function name then passing in the value we want to print, which is called the argument.  
-
-## Stings
+## Strings
 - A String Stores text
+- Create String with quotes
+    -- Double quotes are useful if a single quote is literally part of the String. Would cause an error if single quote is part of string because python would think its the end of the string and wouldn't know what to do with the rest. 
+- String Concatenation 
+    -- putting 2 stings together with the '+' operator
+    -- in order to have a space put + " " +
