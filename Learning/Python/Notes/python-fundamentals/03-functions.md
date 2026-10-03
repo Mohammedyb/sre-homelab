@@ -9,3 +9,10 @@
     -- The essage gets printed to the screen 
     -- The program waits for the user to input something and press enter
 
+# Data Type Conversion Functions
+- Can wrap the data type in a call to the function 
+    -- ex - Converting a float to an int 
+        --- amount = int(10.6). Printing will only leave whole number. 
+    -- Converting int to float 
+        --- amount = float (10). Printing will convert to decimal.
+

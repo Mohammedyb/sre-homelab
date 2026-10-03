@@ -1,6 +1,7 @@
 # Data Types
 - Python Infers data types
 
+# Primitive Data Types
 ## Integer or int
 - Whole numbers
 
