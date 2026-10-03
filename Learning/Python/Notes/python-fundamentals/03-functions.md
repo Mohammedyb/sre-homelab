@@ -16,3 +16,5 @@
     -- Converting int to float 
         --- amount = float (10). Printing will convert to decimal.
 
+## output()
+- 
