@@ -22,3 +22,12 @@
 
 ## Floor Division //
 - use '//' to  divide two numbers and round the result down to the nearest whole number
+
+# Comparision Operators (Comparators)
+
+## == (Equal to)
+## != (Not equal to)
+## > (Greater than)
+## < (Less than)
+## >= (Greater than or equal to)
+## <= (Less than or equal to)
