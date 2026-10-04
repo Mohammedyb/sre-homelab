@@ -18,3 +18,7 @@
 
 ## output()
 - 
+
+## Sum
+- a built-in tool used to add up the elements of an iterable (such as a list, tuple, set, or dictionary values) and return the total
+
