@@ -8,6 +8,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [Python overview](python-fundamentals/concepts/python-overview.md)
 - **Data types**
   - [Booleans](python-fundamentals/data-types/boolean.md)
+  - [Dictionaries](python-fundamentals/data-types/dictionary.md)
   - [Floating-point numbers](python-fundamentals/data-types/float.md)
   - [Integers](python-fundamentals/data-types/integer.md)
   - [Lists](python-fundamentals/data-types/list.md)
