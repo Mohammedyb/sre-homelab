@@ -10,15 +10,3 @@
 
 ## elseif statement elif
 - allows you to check multiple, sequential conditions if the initial if statement evaluates to False.
-
-# Logical Operators
-
-## or
-- use 'or' to combine multiple comparisons. atleast one needs to be true for whole statement need to be true.
-
-## and
-- Both comparisons need to be true for the if statment to be true.
-
-## not
-- lets you negate a comparison. And can help make the statement more readable. 
-

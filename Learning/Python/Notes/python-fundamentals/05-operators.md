@@ -42,3 +42,15 @@
 
 ## Less Than or Equal to <=
 - Use <= to check whether the left value is less than or equal to the right value.
+
+# Logical Operators
+
+## or
+- use 'or' to combine multiple comparisons. atleast one needs to be true for whole statement need to be true.
+
+## and
+- Both comparisons need to be true for the if statment to be true.
+
+## not
+- lets you negate a comparison. And can help make the statement more readable. 
+
