@@ -18,3 +18,7 @@
 
 ## and
 - Both comparisons need to be true for the if statment to be true.
+
+## not
+- lets you negate a comparison. And can help make the statement more readable. 
+
