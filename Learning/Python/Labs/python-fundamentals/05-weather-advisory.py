@@ -1,8 +1,7 @@
-temperature = 95
+temperature = 75
+forcast = "sunny"
 
-if temperature > 80 or temperature < 60:
-    print("Stay inside!")
-
-
-else:
+if temperature < 80 and forcast != "rainy":
     print("Enjoy the nice weather!")
+else:
+    print("Stay inside!")
