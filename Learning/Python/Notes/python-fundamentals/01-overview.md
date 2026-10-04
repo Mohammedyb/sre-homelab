@@ -1,5 +1,8 @@
 # Python Fundamentals
 
+## USeful links:
+- docs.python.org/3/library
+
 ## What is Python?
 - Python is a high-levl, general purpose programming language commonly used for automation, scripting, application development, and data analysis.
 
