@@ -28,6 +28,8 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [range()](python-fundamentals/functions/built-ins/range.md)
   - [sum()](python-fundamentals/functions/built-ins/sum.md)
   - [Type conversion](python-fundamentals/functions/built-ins/type-conversion.md)
+- **Data formats**
+  - [JSON](python-fundamentals/json/json.md)
 - **Keywords**
   - [break](python-fundamentals/keywords/break.md)
   - [Conditional keywords: if, elif, and else](python-fundamentals/keywords/conditionals.md)
