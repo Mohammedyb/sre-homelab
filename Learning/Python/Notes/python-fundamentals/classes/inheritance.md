@@ -3,6 +3,10 @@
 I use inheritance when one class should reuse or extend another class. The
 child class names the parent class in parentheses.
 
+- A [parent class](parent-class.md) provides behavior that another class can
+  inherit.
+- A [child class](child-class.md) inherits and can add or change behavior.
+
 ```python
 class Dog:
     def bark(self):
