@@ -1,7 +1,9 @@
 import random
 
-computer_choice = 'scissors'
+computer_choice = random.choice['rock', 'paper', 'scissors']
 user_choice = input('do you want to choose rock, paper, or scissors? ')
+
+print("Computer chose: ", computer_choice)
 
 if computer_choice == user_choice:
     print("It's a tie!")
