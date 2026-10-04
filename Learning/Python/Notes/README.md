@@ -12,6 +12,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [Floating-point numbers](python-fundamentals/data-types/float.md)
   - [Integers](python-fundamentals/data-types/integer.md)
   - [Lists](python-fundamentals/data-types/list.md)
+  - [None](python-fundamentals/data-types/none.md)
   - [Sequences](python-fundamentals/data-types/sequence.md)
   - [Strings](python-fundamentals/data-types/string.md)
 - **First-class objects**
@@ -43,3 +44,5 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [Logical](python-fundamentals/operators/logical.md)
 - **Special characters**
   - [Newline character](python-fundamentals/special-characters/newline.md)
+- **Syntax**
+  - [Comments](python-fundamentals/syntax/comments.md)
