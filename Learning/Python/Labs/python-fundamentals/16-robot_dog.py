@@ -6,10 +6,10 @@ class Robot_Dog:
         print("Bark,Bark!")
 
 #Main Program
-my_dog = Robot_Dog("Sherrif", "Labrador")
-print (my_dog.name)
-print(my_dog.breed)
-my_dog.bark()
+def main():
+    my_dog = Robot_Dog("Sherrif", "Labrador")
+    print (my_dog.name)
+    print(my_dog.breed)
+    my_dog.bark()
 
-
-        
+main()
