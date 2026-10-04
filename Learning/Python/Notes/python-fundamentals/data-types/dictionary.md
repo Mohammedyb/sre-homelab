@@ -18,3 +18,6 @@ getting an error if it is missing.
 
 I can use [`.items()`](../methods/dictionary-items.md) to loop through the
 keys and values together.
+
+I can also use dictionaries to [represent objects](dictionaries-as-objects.md)
+by storing each object's details as key-value pairs.
