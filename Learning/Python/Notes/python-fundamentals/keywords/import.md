@@ -1,7 +1,6 @@
-# The `import` keyword
+# `import`
 
-Use `import` to make code defined in another module available to your program.
-For example:
+I use `import` to use code from another module:
 
 ```python
 import random
@@ -9,5 +8,4 @@ import random
 print(random.randint(1, 6))
 ```
 
-- [Modules](../modules/module.md)
-- [The `random` module](../modules/random.md)
+See [modules](../modules/module.md) and the [`random` module](../modules/random.md).

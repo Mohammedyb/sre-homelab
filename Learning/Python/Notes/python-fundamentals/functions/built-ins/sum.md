@@ -1,7 +1,6 @@
 # `sum()`
 
-`sum()` adds the numeric items in an iterable, such as a list or tuple, and
-returns their total.
+I use `sum()` to add the numbers in an iterable, such as a list or tuple.
 
 ```python
 total = sum([2, 3, 5])  # 10

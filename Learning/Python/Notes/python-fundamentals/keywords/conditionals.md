@@ -1,11 +1,10 @@
-# Conditional keywords: `if`, `elif`, and `else`
+# Conditionals: `if`, `elif`, and `else`
 
-Conditional statements choose which block of code to run based on conditions.
+I use conditionals to choose which code to run:
 
-- `if` runs its indented block when its condition is true.
-- `elif` checks another condition when preceding conditions were false. It is
-  short for “else if.”
-- `else` runs when none of the preceding conditions were true.
+- `if` checks the first condition.
+- `elif` checks another condition if the earlier one was false.
+- `else` runs if none of the conditions were true.
 
 ```python
 if score >= 90:
@@ -16,5 +15,5 @@ else:
     grade = "Keep practicing"
 ```
 
-Python uses indentation to mark code blocks. Four spaces per indentation level
-is the common convention; keep indentation consistent.
+Python uses indentation to mark each code block. I use four spaces per level
+and keep the indentation consistent.

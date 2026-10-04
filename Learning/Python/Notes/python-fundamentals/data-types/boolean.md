@@ -1,4 +1,4 @@
 # Booleans
 
-The Boolean type (`bool`) has two values: `True` and `False`. Booleans are
-often used to represent the result of a condition or comparison.
+I use `bool` values to represent either `True` or `False`, often as the result
+of a comparison or condition.

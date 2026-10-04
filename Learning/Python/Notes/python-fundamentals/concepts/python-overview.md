@@ -1,15 +1,12 @@
 # Python overview
 
-Python is a high-level, general-purpose programming language commonly used for
-automation, scripting, application development, and data analysis.
+I use Python to write scripts, automate tasks, build applications, and work
+with data.
 
-## Where Python code runs
+I can run code one line at a time in the interactive shell or save a program
+in a `.py` file.
 
-- **Interactive shell:** Run Python statements one at a time and see their
-  results immediately.
-- **Python file:** Save a longer program in a `.py` file and run the file.
+Python figures out a value's type for me when I assign it to a variable.
 
-## Documentation
-
-The [Python standard library documentation](https://docs.python.org/3/library/)
-describes modules included with Python.
+For built-in modules, I can check the
+[Python standard library documentation](https://docs.python.org/3/library/).

@@ -1,7 +1,7 @@
-# The `for` keyword
+# `for` loops
 
-A `for` loop executes a block once for each item in an iterable, such as a
-list, tuple, dictionary, set, or string.
+I use a `for` loop to run code once for each item in an iterable, such as a
+list or string.
 
 ```python
 for name in ["Ada", "Grace"]:

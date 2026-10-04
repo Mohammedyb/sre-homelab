@@ -1,39 +1,39 @@
 # Python Notes
 
-Notes are grouped by topic. Each file covers one concept or closely related
-group of concepts.
+I keep my Python notes grouped by topic. Each file covers one idea.
 
 ## Categories
 
 - **Concepts**
-  - [Python overview](concepts/python-overview.md)
+  - [Python overview](python-fundamentals/concepts/python-overview.md)
 - **Data types**
-  - [Booleans](data-types/boolean.md)
-  - [Floating-point numbers](data-types/float.md)
-  - [Integers](data-types/integer.md)
-  - [Lists](data-types/list.md)
-  - [Sequences](data-types/sequence.md)
-  - [Strings](data-types/string.md)
+  - [Booleans](python-fundamentals/data-types/boolean.md)
+  - [Floating-point numbers](python-fundamentals/data-types/float.md)
+  - [Integers](python-fundamentals/data-types/integer.md)
+  - [Lists](python-fundamentals/data-types/list.md)
+  - [Sequences](python-fundamentals/data-types/sequence.md)
+  - [Strings](python-fundamentals/data-types/string.md)
 - **First-class objects**
-  - [Functions as first-class objects](first-class-objects/first-class-objects.md)
+  - [Functions as first-class objects](python-fundamentals/first-class-objects/first-class-objects.md)
 - **Functions**
-  - [input()](functions/built-ins/input.md)
-  - [print()](functions/built-ins/print.md)
-  - [sum()](functions/built-ins/sum.md)
-  - [Type conversion](functions/built-ins/type-conversion.md)
+  - [input()](python-fundamentals/functions/built-ins/input.md)
+  - [print()](python-fundamentals/functions/built-ins/print.md)
+  - [range()](python-fundamentals/functions/built-ins/range.md)
+  - [sum()](python-fundamentals/functions/built-ins/sum.md)
+  - [Type conversion](python-fundamentals/functions/built-ins/type-conversion.md)
 - **Keywords**
-  - [Conditional keywords: if, elif, and else](keywords/conditionals.md)
-  - [for](keywords/for.md)
-  - [import](keywords/import.md)
+  - [Conditional keywords: if, elif, and else](python-fundamentals/keywords/conditionals.md)
+  - [for](python-fundamentals/keywords/for.md)
+  - [import](python-fundamentals/keywords/import.md)
 - **Methods**
-  - [List append()](methods/list-append.md)
-  - [List remove()](methods/list-remove.md)
+  - [List append()](python-fundamentals/methods/list-append.md)
+  - [List remove()](python-fundamentals/methods/list-remove.md)
 - **Modules**
-  - [Modules](modules/module.md)
-  - [The random module](modules/random.md)
+  - [Modules](python-fundamentals/modules/module.md)
+  - [The random module](python-fundamentals/modules/random.md)
 - **Operators**
-  - [Arithmetic](operators/arithmetic.md)
-  - [Comparison](operators/comparison.md)
-  - [Logical](operators/logical.md)
+  - [Arithmetic](python-fundamentals/operators/arithmetic.md)
+  - [Comparison](python-fundamentals/operators/comparison.md)
+  - [Logical](python-fundamentals/operators/logical.md)
 - **Special characters**
-  - [Newline character](special-characters/newline.md)
+  - [Newline character](python-fundamentals/special-characters/newline.md)

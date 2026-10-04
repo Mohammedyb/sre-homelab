@@ -1,7 +1,6 @@
 # Comparison operators
 
-Comparison operators compare two values and produce a Boolean result
-(`True` or `False`).
+I use comparison operators to compare values. The result is `True` or `False`.
 
 | Operator | Meaning |
 | --- | --- |

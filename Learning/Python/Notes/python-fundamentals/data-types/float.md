@@ -1,4 +1,3 @@
-# Floating-point numbers
+# Floats
 
-A floating-point number (`float`) represents a number with a fractional part,
-such as `3.14` or `-0.5`.
+I use `float` for numbers with a decimal part, like `3.14` or `-0.5`.

@@ -1,7 +1,7 @@
 # `input()`
 
-`input()` displays an optional prompt, waits for the user to enter text and
-press Enter, then returns the entered text as a string.
+I use `input()` to prompt for text. It waits for the user to press Enter and
+returns the response as a string.
 
 ```python
 name = input("What is your name? ")

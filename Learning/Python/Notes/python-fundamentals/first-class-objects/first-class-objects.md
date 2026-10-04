@@ -1,8 +1,7 @@
 # First-class objects
 
-In Python, functions are first-class objects. This means a function can be
-assigned to a variable, passed to another function, or returned from a
-function, just like other values.
+I can use functions like other values: assign them to variables, pass them to
+other functions, or return them from a function.
 
 ```python
 def greet():
@@ -12,5 +11,4 @@ say_hello = greet
 print(say_hello())
 ```
 
-Assigning `greet` to `say_hello` does not call it; the parentheses in
-`say_hello()` call the function.
+`say_hello = greet` assigns the function. `say_hello()` calls it.

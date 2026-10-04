@@ -1,9 +1,7 @@
 # Modules
 
-A module is a Python file that can define reusable code, such as functions,
-classes, or variables. Importing a module lets a program use that code instead
-of writing everything from scratch. Python's standard library includes
-modules that are available to import.
+I use a module to organize and reuse Python code. A module is usually a `.py`
+file with functions, classes, or variables. I make its code available with
+[`import`](../keywords/import.md).
 
-- [The `import` keyword](../keywords/import.md)
 - [The `random` module](random.md)

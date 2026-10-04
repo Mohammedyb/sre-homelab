@@ -1,9 +1,9 @@
-# The list `.append()` method
+# List `.append()`
 
-`.append()` adds one item to the end of a list. It changes the existing list.
+I use `.append()` to add one item to the end of a list. It changes the list in
+place.
 
 ```python
 names = ["Ada"]
 names.append("Grace")
-# names is now ["Ada", "Grace"]
 ```
