@@ -15,3 +15,6 @@
 - String Concatenation 
     -- putting 2 stings together with the '+' operator
     -- in order to have a space put + " " +
+
+## Boolean
+- can set boolean variables to either True or False
