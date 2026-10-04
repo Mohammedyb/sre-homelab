@@ -22,3 +22,5 @@
 ## Sequence
 -  sequence is not a specific data type, but rather a category of data structures that store elements in a positionally ordered collection
 
+## Methods
+- 
