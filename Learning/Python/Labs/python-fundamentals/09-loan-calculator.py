@@ -6,15 +6,16 @@ months = int(input("How many months do you want to see the results for?\n")) #24
 
 monthly_rate = apr/100/12
 
-# Calcularte interest to pay
-interest_paid = money_owed*monthly_rate
+for i in range(months):
+    # Calcularte interest to pay
+    interest_paid = money_owed*monthly_rate
 
-# Add in interest
-money_owed = money_owed +interest_paid
+    # Add in interest
+    money_owed = money_owed +interest_paid
 
-# Make payment
-money_owed = money_owed - payment
+    # Make payment
+    money_owed = money_owed - payment
 
-print("Paid", payment, "of which", interest_paid, "was interest", end = " ")
-print("Now I owe", money_owed)
+    print("Paid", payment, "of which", interest_paid, "was interest", end = " ")
+    print("Now I owe", money_owed)
 
