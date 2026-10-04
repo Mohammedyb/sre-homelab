@@ -44,6 +44,8 @@ I keep my Python notes grouped by topic. Each file covers one idea.
 - **Modules**
   - [Modules](python-fundamentals/modules/module.md)
   - [The random module](python-fundamentals/modules/random.md)
+- **Networking**
+  - [HTTP requests](python-fundamentals/networking/http-requests.md)
 - **Operators**
   - [Arithmetic](python-fundamentals/operators/arithmetic.md)
   - [Comparison](python-fundamentals/operators/comparison.md)
