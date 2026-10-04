@@ -1,7 +1,7 @@
 # Lists
 
-I use a list to keep items in order. A list can be empty, hold different types
-of values, or contain other lists.
+I use a list (`list`) to keep items in order. Lists can hold different types
+of values, including other lists. They can also be changed after I create them.
 
 ```python
 empty = []
@@ -10,6 +10,14 @@ mixed = ["score", 10, True]
 nested = [[1, 2], [3, 4]]
 ```
 
-List indexes start at `0`, so I use `names[0]` to get the first item.
+I can access or change an item by its index, or get part of a list with a
+slice:
 
-I can add or remove items with [list methods](../methods/list-append.md).
+```python
+names[0] = "Katherine"
+first_two = names[0:2]
+```
+
+- [List indexing](list-indexing.md)
+- [List slicing](list-slicing.md)
+- [List methods](../methods/list-append.md), including adding and removing items

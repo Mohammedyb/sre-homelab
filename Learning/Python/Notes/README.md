@@ -12,6 +12,8 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [Floating-point numbers](python-fundamentals/data-types/float.md)
   - [Integers](python-fundamentals/data-types/integer.md)
   - [Lists](python-fundamentals/data-types/list.md)
+  - [List indexing](python-fundamentals/data-types/list-indexing.md)
+  - [List slicing](python-fundamentals/data-types/list-slicing.md)
   - [None](python-fundamentals/data-types/none.md)
   - [Sequences](python-fundamentals/data-types/sequence.md)
   - [Strings](python-fundamentals/data-types/string.md)
