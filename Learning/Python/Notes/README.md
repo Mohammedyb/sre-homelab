@@ -9,6 +9,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [Running Python from the command line](python-fundamentals/command-line/python.md)
 - **Classes**
   - [Classes](python-fundamentals/classes/classes.md)
+  - [`__init__()` method](python-fundamentals/classes/init-method.md)
   - [Objects](python-fundamentals/classes/objects.md)
 - **Concepts**
   - [Object-oriented programming](python-fundamentals/concepts/object-oriented-programming.md)

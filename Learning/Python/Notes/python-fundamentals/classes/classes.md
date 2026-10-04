@@ -14,7 +14,7 @@ movie = Movie("The Grinch", "11:00am")
 print(movie.title)
 ```
 
-`__init__()` runs when I create an instance and sets its attributes.
+See [`__init__()`](init-method.md) for how I initialize an instance.
 `self` refers to the instance being created or used.
 
 See [objects](objects.md) for more about instances and attributes.
