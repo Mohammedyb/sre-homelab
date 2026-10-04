@@ -46,5 +46,6 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [Logical](python-fundamentals/operators/logical.md)
 - **Special characters**
   - [Newline character](python-fundamentals/special-characters/newline.md)
+  - [Tab character](python-fundamentals/special-characters/tab.md)
 - **Syntax**
   - [Comments](python-fundamentals/syntax/comments.md)
