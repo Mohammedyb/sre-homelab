@@ -10,3 +10,11 @@
 
 ## elseif statement elif
 - allows you to check multiple, sequential conditions if the initial if statement evaluates to False.
+
+# Logical Operators
+
+## the keyword or
+- use 'or' to combine multiple comparisons. atleast one needs to be true for whole statement need to be true.
+
+
+
