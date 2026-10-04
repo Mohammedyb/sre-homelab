@@ -49,6 +49,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [The requests package](python-fundamentals/networking/requests.md)
 - **Package management**
   - [pip](python-fundamentals/package-management/pip.md)
+  - [Virtual environments](python-fundamentals/package-management/virtual-environments.md)
 - **Operators**
   - [Arithmetic](python-fundamentals/operators/arithmetic.md)
   - [Comparison](python-fundamentals/operators/comparison.md)
