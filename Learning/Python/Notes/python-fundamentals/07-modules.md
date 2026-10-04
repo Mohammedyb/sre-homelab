@@ -4,3 +4,5 @@
 ## Import
 - keyword used to gain access to code, functions, classes, or variables defined in another module or file. 
 
+## Random
+- used to generate pseudo-random numbers for simulations, games, testing, and data selection.
