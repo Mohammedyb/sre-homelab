@@ -1,3 +1,5 @@
+import random
+
 computer_choice = 'scissors'
 user_choice = input('do you want to choose rock, paper, or scissors? ')
 

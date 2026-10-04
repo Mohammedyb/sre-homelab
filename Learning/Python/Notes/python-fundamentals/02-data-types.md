@@ -18,3 +18,7 @@
 
 ## Boolean
 - can set boolean variables to either True or False
+
+## Sequence
+-  sequence is not a specific data type, but rather a category of data structures that store elements in a positionally ordered collection
+
