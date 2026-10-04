@@ -19,3 +19,4 @@ See [`__init__()`](init-method.md) for how I initialize an instance.
 
 See [objects](objects.md) for more about instances and attributes.
 See [methods](../methods/methods.md) for how I define behavior on a class.
+See [class inheritance](inheritance.md) to reuse or extend another class.

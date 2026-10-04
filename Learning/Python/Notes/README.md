@@ -10,6 +10,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
 - **Classes**
   - [Classes](python-fundamentals/classes/classes.md)
   - [`__init__()` method](python-fundamentals/classes/init-method.md)
+  - [Class inheritance](python-fundamentals/classes/inheritance.md)
   - [Objects](python-fundamentals/classes/objects.md)
 - **Concepts**
   - [Object-oriented programming](python-fundamentals/concepts/object-oriented-programming.md)
