@@ -31,6 +31,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [import](python-fundamentals/keywords/import.md)
   - [in](python-fundamentals/keywords/in.md)
 - **Methods**
+  - [Dictionary get()](python-fundamentals/methods/dictionary-get.md)
   - [List append()](python-fundamentals/methods/list-append.md)
   - [List remove()](python-fundamentals/methods/list-remove.md)
 - **Modules**
