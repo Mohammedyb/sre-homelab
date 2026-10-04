@@ -13,3 +13,6 @@ message = greet("Ada")
 `name` is a parameter; `"Ada"` is the argument passed in. `return` sends a
 value back to the code that called the function. If I don't use `return`, the
 function returns `None`.
+
+Names created inside a function are usually local to it. See [scope](scope.md)
+for more.
