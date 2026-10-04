@@ -4,6 +4,9 @@ I keep my Python notes grouped by topic. Each file covers one idea.
 
 ## Categories
 
+- **Command line**
+  - [`ls`](python-fundamentals/command-line/ls.md)
+  - [Running Python from the command line](python-fundamentals/command-line/python.md)
 - **Concepts**
   - [Python overview](python-fundamentals/concepts/python-overview.md)
 - **Data types**
