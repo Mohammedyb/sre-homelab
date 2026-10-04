@@ -18,3 +18,4 @@ See [`__init__()`](init-method.md) for how I initialize an instance.
 `self` refers to the instance being created or used.
 
 See [objects](objects.md) for more about instances and attributes.
+See [methods](../methods/methods.md) for how I define behavior on a class.

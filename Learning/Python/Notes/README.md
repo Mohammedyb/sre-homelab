@@ -51,6 +51,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [Dictionary items()](python-fundamentals/methods/dictionary-items.md)
   - [List append()](python-fundamentals/methods/list-append.md)
   - [List remove()](python-fundamentals/methods/list-remove.md)
+  - [Methods](python-fundamentals/methods/methods.md)
 - **Modules**
   - [Modules](python-fundamentals/modules/module.md)
   - [The random module](python-fundamentals/modules/random.md)
