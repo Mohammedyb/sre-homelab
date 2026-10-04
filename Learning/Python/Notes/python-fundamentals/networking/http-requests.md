@@ -12,4 +12,4 @@ with urlopen("https://example.com") as response:
 ```
 
 The response body is returned as bytes. For larger projects, I can also use
-the third-party `requests` package.
+the third-party [`requests` package](requests.md).
