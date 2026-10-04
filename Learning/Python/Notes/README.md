@@ -11,6 +11,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [Classes](python-fundamentals/classes/classes.md)
   - [Objects](python-fundamentals/classes/objects.md)
 - **Concepts**
+  - [Object-oriented programming](python-fundamentals/concepts/object-oriented-programming.md)
   - [Python overview](python-fundamentals/concepts/python-overview.md)
 - **Data types**
   - [Booleans](python-fundamentals/data-types/boolean.md)
