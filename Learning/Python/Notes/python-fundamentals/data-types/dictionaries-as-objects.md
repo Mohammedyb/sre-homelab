@@ -16,4 +16,4 @@ print(movie["showtime"])
 
 I can keep several records in a list of dictionaries and loop through them.
 This is a simple way to represent data, but it is not the same as creating
-objects from a Python class.
+objects from a [Python class](../classes/classes.md).
