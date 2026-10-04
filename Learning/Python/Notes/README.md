@@ -18,13 +18,17 @@ I keep my Python notes grouped by topic. Each file covers one idea.
 - **Functions**
   - [input()](python-fundamentals/functions/built-ins/input.md)
   - [print()](python-fundamentals/functions/built-ins/print.md)
+  - [print() end argument](python-fundamentals/functions/built-ins/print-end.md)
+  - [print() sep argument](python-fundamentals/functions/built-ins/print-sep.md)
   - [range()](python-fundamentals/functions/built-ins/range.md)
   - [sum()](python-fundamentals/functions/built-ins/sum.md)
   - [Type conversion](python-fundamentals/functions/built-ins/type-conversion.md)
 - **Keywords**
+  - [break](python-fundamentals/keywords/break.md)
   - [Conditional keywords: if, elif, and else](python-fundamentals/keywords/conditionals.md)
   - [for](python-fundamentals/keywords/for.md)
   - [import](python-fundamentals/keywords/import.md)
+  - [in](python-fundamentals/keywords/in.md)
 - **Methods**
   - [List append()](python-fundamentals/methods/list-append.md)
   - [List remove()](python-fundamentals/methods/list-remove.md)
