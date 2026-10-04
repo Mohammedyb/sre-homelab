@@ -24,6 +24,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
 - **First-class objects**
   - [Functions as first-class objects](python-fundamentals/first-class-objects/first-class-objects.md)
 - **Functions**
+  - [Functions](python-fundamentals/functions/functions.md)
   - [input()](python-fundamentals/functions/built-ins/input.md)
   - [print()](python-fundamentals/functions/built-ins/print.md)
   - [print() end argument](python-fundamentals/functions/built-ins/print-end.md)
