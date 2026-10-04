@@ -12,6 +12,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [Child classes](python-fundamentals/classes/child-class.md)
   - [`__init__()` method](python-fundamentals/classes/init-method.md)
   - [Class inheritance](python-fundamentals/classes/inheritance.md)
+  - [Method overriding](python-fundamentals/classes/method-overriding.md)
   - [Objects](python-fundamentals/classes/objects.md)
   - [Parent classes](python-fundamentals/classes/parent-class.md)
 - **Concepts**

@@ -23,3 +23,6 @@ print(my_dog.charge())
 
 `RobotDog` inherits `bark()` from `Dog` and adds its own `charge()` method.
 I can use `super()` in a child class to call a method from its parent.
+
+See [method overriding](method-overriding.md) for replacing an inherited
+method with a child class's version.
