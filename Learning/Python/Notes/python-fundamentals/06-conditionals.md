@@ -13,8 +13,8 @@
 
 # Logical Operators
 
-## the keyword or
+## or
 - use 'or' to combine multiple comparisons. atleast one needs to be true for whole statement need to be true.
 
-
-
+## and
+- Both comparisons need to be true for the if statment to be true.
