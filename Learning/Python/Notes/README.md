@@ -76,7 +76,10 @@ and production work where they apply.
   - [Methods](python-fundamentals/methods/methods.md)
 - **Modules**
   - [Modules](python-fundamentals/modules/module.md)
+  - [The `os` module](python-fundamentals/modules/os.md)
+  - [The `pathlib` module](python-fundamentals/modules/pathlib.md)
   - [The random module](python-fundamentals/modules/random.md)
+  - [The `shutil` module](python-fundamentals/modules/shutil.md)
 - **Networking**
   - [HTTP requests](python-fundamentals/networking/http-requests.md)
   - [The requests package](python-fundamentals/networking/requests.md)
