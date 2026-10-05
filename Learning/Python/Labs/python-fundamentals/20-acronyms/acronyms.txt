@@ -15,3 +15,5 @@ SRE - Site reliability engineering
 SLI - Service level indicator
 SLO - Service level objective
 SLA - Service level agreement
+IaC - Infrastructure as Code
+
