@@ -1,11 +1,13 @@
 # Comments
 
-I use `#` to add a comment. Python ignores everything after it on that line.
+In Python source code, `#` starts a comment that runs to the end of the line.
+Comments explain intent or constraints that are not clear from the code.
 
 ```python
 # This is a comment
 movie = "The Grinch"  # This is an inline comment
 ```
 
-I use comments to explain why something is done when the code alone isn't
-clear.
+Prefer updating stale comments rather than keeping them after behavior
+changes. Use docstrings for documentation that should be available through
+introspection.

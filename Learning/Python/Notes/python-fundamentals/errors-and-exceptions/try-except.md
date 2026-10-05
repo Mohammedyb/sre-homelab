@@ -1,17 +1,33 @@
 # `try` and `except`
 
-I use a `try`/`except` block to handle an exception that might happen while
-my code runs. I put the risky code in `try` and handle a specific exception
-in `except`.
+## Overview
+
+Use `try`/`except` to handle an expected failure at the point where the
+program can recover or add useful context. Keep the `try` block narrow.
 
 ```python
 try:
-    age = int(input("Enter your age: "))
+    timeout = float(input("Timeout in seconds: "))
 except ValueError:
-    print("Please enter a whole number.")
+    print("Timeout must be a number.")
 else:
-    print("Your age is", age)
+    if timeout <= 0:
+        raise ValueError("Timeout must be positive.")
+    print("Using timeout:", timeout)
 ```
 
-`except` runs only if the matching exception occurs. `else` runs if the `try`
-block succeeds. I catch specific exceptions so I don't hide unrelated errors.
+`except` handles matching exceptions; `else` runs only if the `try` block
+succeeds. A `finally` block runs during cleanup regardless of success or
+failure.
+
+## Common mistakes
+
+- Avoid bare `except:` and broad `except Exception:` unless the boundary has
+  a deliberate policy for every failure.
+- Do not put unrelated code in `try`; it can cause the handler to catch
+  failures from the wrong operation.
+
+## SRE relevance
+
+Translate errors into useful logs or exit statuses at process boundaries.
+Preserve the original exception and traceback when re-raising.

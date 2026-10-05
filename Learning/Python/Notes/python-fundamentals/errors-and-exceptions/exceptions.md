@@ -1,12 +1,24 @@
 # Exceptions
 
-An exception is an error or unusual event that interrupts normal code. I can
-handle an exception so my program can respond instead of stopping
-unexpectedly.
+## Overview
 
-See [`try` and `except`](try-except.md) for how I handle exceptions.
-I can use `finally` for cleanup code that should run whether an exception
-happened or not.
+An exception signals that an operation failed or could not complete normally.
+Python propagates an unhandled exception up the call stack; a handler can
+recover, add context, or report the failure.
 
-I can deliberately trigger an exception with [`raise`](raise.md), or define a
-[custom exception](custom-exceptions.md) for a specific kind of problem.
+## Key concepts
+
+- Catch the narrowest exception that supports a useful recovery action.
+- Use `else` for work that should happen only when the `try` block succeeds.
+- Use `finally` for cleanup that must run whether the operation succeeds or
+  fails. Prefer `with` for resources that support context management.
+
+See [`try` and `except`](try-except.md), [`raise`](raise.md), and
+[custom exceptions](custom-exceptions.md).
+
+## SRE relevance
+
+Handle failures at system boundaries, preserve useful error context, and
+avoid turning a failed operation into a success-shaped result. Retrying is
+appropriate only when the failure may be transient and the operation is safe
+to repeat.

@@ -1,11 +1,14 @@
 # `in`
 
-I use `in` to check whether a value is in a collection. I also use it to get
-each item in a `for` loop.
+`in` tests membership in a collection and is also used by `for` loops to
+iterate over values.
 
 ```python
-print("a" in "cat")  # True
+print("api" in ["api", "worker"])
 
-for name in ["Ada", "Grace"]:
-    print(name)
+settings = {"region": "east"}
+print("region" in settings)  # Checks dictionary keys
 ```
+
+Membership behavior depends on the type. For dictionaries, `in` checks keys,
+not values.

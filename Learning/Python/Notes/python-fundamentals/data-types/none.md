@@ -1,13 +1,20 @@
 # `None`
 
-I use `None` to represent no value. Its type is `NoneType`.
+## Overview
+
+`None` is Python's singleton value for "no value" or "not set." Its type is
+`NoneType`.
 
 ```python
-showtime = None
+result = None
 
-if showtime is None:
-    print("No showtime found")
+if result is None:
+    print("No result available")
 ```
 
-I check for `None` with `is None`. For example, `dict.get()` returns `None` if
-a key is missing and I don't provide a default value.
+Use `is None` to check for it. A function without an explicit `return` also
+returns `None`. Do not use `None` to mean several different states if those
+states need different handling.
+
+For dictionaries, [`.get()`](../methods/dictionary-get.md) returns `None`
+for a missing key unless a default is provided.

@@ -1,7 +1,12 @@
 # `sum()`
 
-I use `sum()` to add the numbers in an iterable, such as a list or tuple.
+`sum()` adds numeric items in an iterable and returns the total.
 
 ```python
-total = sum([2, 3, 5])  # 10
+latencies_ms = [12, 18, 9]
+total_ms = sum(latencies_ms)
 ```
+
+An optional second argument supplies a starting value. For floating-point
+measurements where accumulated rounding matters, consider `math.fsum()`.
+Do not use `sum()` to concatenate strings.

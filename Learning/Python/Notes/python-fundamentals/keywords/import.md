@@ -1,22 +1,25 @@
 # `import`
 
-I use `import` to use code from another module. I can import the whole module
-and access its contents through the module name:
+`import` makes names from a module available to the current module. Importing
+the module keeps its names qualified and makes their source clear:
 
 ```python
-import random
+import json
 
-print(random.randint(1, 6))
+payload = json.loads('{"healthy": true}')
 ```
 
-Or, I can import a specific name from a module:
+I can import a specific name when that improves readability:
 
 ```python
-from employee import Employee
+from pathlib import Path
 
-employee = Employee("Ada", "Lovelace")
+config_path = Path("config.json")
 ```
 
-The module name comes from the Python file name without `.py`. For example,
-`employee.py` provides the `employee` module. See [modules](../modules/module.md)
-and the [`random` module](../modules/random.md).
+The module name usually matches a `.py` file without its extension. Prefer
+specific imports over `from module import *`; avoid import-time side effects
+so modules remain safe to reuse.
+
+See [modules](../modules/module.md) and the
+[`random` module](../modules/random.md).

@@ -1,12 +1,13 @@
 # `read()`
 
-I use `read()` to get the remaining contents of a file as one string. If I pass
-a number, it reads up to that many characters instead.
+`read()` returns the remaining file contents as a string. An optional size
+limits how many characters are read.
 
 ```python
 with open("notes.txt", "r", encoding="utf-8") as file:
     contents = file.read()
 ```
 
-See [`readline()`](readline.md) to read one line at a time or
-[`readlines()`](readlines.md) to get the lines as a list.
+Reading without a size loads the entire remaining file into memory. For large
+files, read bounded chunks or iterate over lines. See
+[`readline()`](readline.md) and [`readlines()`](readlines.md).

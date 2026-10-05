@@ -1,23 +1,37 @@
 # Method overriding
 
-I override a method when a child class defines a method with the same name as
-one in its parent class. The child object's method is used instead of the
-parent's version.
+## Overview
+
+Overriding is when a subclass defines a method with the same name as an
+inherited method. Calls on the subclass use its implementation.
+
+## Example
 
 ```python
-class Dog:
-    def make_noise(self):
-        return "Some noise"
+class HealthCheck:
+    def status(self):
+        return "unknown"
 
 
-class RobotDog(Dog):
-    def make_noise(self):
-        return "Woof woof!"
+class HttpHealthCheck(HealthCheck):
+    def status(self):
+        return "healthy"
 
 
-my_dog = RobotDog()
-print(my_dog.make_noise())  # Woof woof!
+check = HttpHealthCheck()
+print(check.status())
 ```
 
-`RobotDog` overrides `Dog.make_noise()`. I can call `super().make_noise()`
-inside the child method if I also want to use the parent's version.
+Use `super().status()` inside an override when the subclass should extend the
+parent behavior rather than replace it.
+
+## Common mistakes
+
+Keep the method's expected inputs and return contract compatible with the
+parent. A changed contract can break callers that use either class
+interchangeably.
+
+## Interview notes
+
+Overriding enables runtime polymorphism. Tests should cover both the shared
+interface and the subclass-specific behavior.

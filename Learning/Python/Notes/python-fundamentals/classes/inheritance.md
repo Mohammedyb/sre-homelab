@@ -1,28 +1,42 @@
 # Class inheritance
 
-I use inheritance when one class should reuse or extend another class. The
-child class names the parent class in parentheses.
+## Overview
 
-- A [parent class](parent-class.md) provides behavior that another class can
-  inherit.
-- A [child class](child-class.md) inherits and can add or change behavior.
+Inheritance lets a subclass reuse or specialize behavior from a base class.
+Use it when the subclass can be treated as the base type without surprising
+callers.
+
+## Example
 
 ```python
-class Dog:
-    def bark(self):
-        return "Woof!"
+class HealthCheck:
+    def __init__(self, name):
+        self.name = name
 
-class RobotDog(Dog):
-    def charge(self):
-        return "Charging"
+    def run(self):
+        return {"name": self.name, "ok": True}
 
-my_dog = RobotDog()
-print(my_dog.bark())    # Inherited from Dog
-print(my_dog.charge())
+
+class HttpHealthCheck(HealthCheck):
+    def __init__(self, name, url):
+        super().__init__(name)
+        self.url = url
 ```
 
-`RobotDog` inherits `bark()` from `Dog` and adds its own `charge()` method.
-I can use `super()` in a child class to call a method from its parent.
+`super().__init__()` runs the base-class initialization. The subclass then
+adds its own `url` attribute.
 
-See [method overriding](method-overriding.md) for replacing an inherited
-method with a child class's version.
+## Common mistakes
+
+- Overriding a method with an incompatible signature can break code that
+  expects the base-class interface.
+- Prefer composition when one object uses another but is not a specialized
+  form of it.
+
+## Interview notes
+
+Explain inheritance as code reuse and polymorphism, but discuss the coupling
+and testing costs of deep hierarchies.
+
+See [method overriding](method-overriding.md),
+[parent classes](parent-class.md), and [child classes](child-class.md).

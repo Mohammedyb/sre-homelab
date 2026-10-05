@@ -1,25 +1,35 @@
 # Dictionaries
 
-I use a dictionary (`dict`) to store values as key-value pairs. I look up a
-value by its key instead of its position.
+## Overview
+
+A dictionary (`dict`) maps unique, hashable keys to values. Lookup is by key,
+not position. Dictionaries preserve insertion order in modern Python, but
+code should use keys rather than depend on a particular order unless order is
+part of the design.
 
 ```python
-person = {"name": "Ada", "age": 36}
-print(person["name"])  # Ada
+service = {"name": "api", "healthy": True}
+print(service["name"])
 
-person["language"] = "Python"  # Add a new key-value pair
-person["age"] = 37  # Update a value
+service["region"] = "east"
+service["healthy"] = False
 ```
 
-Each key in a dictionary must be unique.
+Assignment adds a missing key or updates an existing key.
 
-I can use [`.get()`](../methods/dictionary-get.md) to look up a key without
-getting an error if it is missing.
-Looking up a missing key with square brackets raises a
-[`KeyError`](../errors-and-exceptions/keyerror.md).
+## Common mistakes
 
-I can use [`.items()`](../methods/dictionary-items.md) to loop through the
-keys and values together.
+A missing key accessed with brackets raises
+[`KeyError`](../errors-and-exceptions/keyerror.md). Use
+[`.get()`](../methods/dictionary-get.md) only when a missing key is expected;
+use brackets when the key is required so invalid data is not hidden.
 
-I can also use dictionaries to [represent objects](dictionaries-as-objects.md)
-by storing each object's details as key-value pairs.
+Use [`.items()`](../methods/dictionary-items.md) to iterate over keys and
+values together.
+
+## SRE relevance
+
+Dictionaries commonly represent decoded JSON and structured configuration.
+Validate required keys and value types at system boundaries.
+
+See [dictionaries as records](dictionaries-as-objects.md).

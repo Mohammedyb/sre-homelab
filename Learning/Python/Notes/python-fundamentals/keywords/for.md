@@ -1,9 +1,12 @@
 # `for` loops
 
-I use a `for` loop to run code once for each item in an iterable, such as a
-list or string.
+Use a `for` loop to process each item from an iterable without manually
+managing an index.
 
 ```python
-for name in ["Ada", "Grace"]:
-    print(name)
+for service in ["api", "worker"]:
+    print(service)
 ```
+
+The loop variable receives each item in turn. Iterating over a stream or file
+line by line can avoid loading all data into memory.

@@ -1,14 +1,31 @@
 # Strings
 
-I use `str` to store text. I can put it in single or double quotes:
+## Overview
+
+`str` stores Unicode text. Single and double quotes both create strings.
+Strings are immutable, so operations produce new strings rather than
+changing the original.
 
 ```python
-name = "Python"
-message = "It's a useful language"
+service = "api"
+message = f"Checking {service}"
 ```
 
-I use `+` to join strings. If I want a space between them, I add one:
+For dynamic text, f-strings make interpolation clear. Use `join()` to combine
+many strings efficiently:
 
 ```python
-full_name = "Ada" + " " + "Lovelace"
+targets = ["api", "worker"]
+summary = ", ".join(targets)
 ```
+
+## Common mistakes
+
+Concatenating values of different types raises `TypeError`; convert values or
+use an f-string. Do not build shell commands by interpolating untrusted text;
+use argument lists with subprocess APIs instead.
+
+## SRE relevance
+
+Strings carry configuration, log messages, and command output. Normalize and
+validate external text at boundaries, and avoid logging secrets.

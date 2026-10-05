@@ -1,11 +1,13 @@
-# List `.remove()`
+# List `remove()`
 
-I use `.remove(value)` to remove the first matching value from a list. It
-raises `ValueError` if the value is not there.
+`list.remove(value)` deletes the first matching value in place. It raises
+`ValueError` if the value is absent.
 
 ```python
 names = ["Ada", "Grace", "Ada"]
 names.remove("Ada")
 ```
 
-To remove an item by index, I use `.pop(index)` instead.
+To remove an item by index, use `pop(index)`. Check membership first only
+when absence is expected; otherwise the exception can expose an unexpected
+state.

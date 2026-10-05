@@ -1,12 +1,24 @@
 # Python overview
 
-I use Python to write scripts, automate tasks, build applications, and work
-with data.
+## Overview
 
-I can run code one line at a time in the interactive shell or save a program
-in a `.py` file.
+Python is a general-purpose language used for automation, services, data
+processing, and tooling. It is dynamically typed: names refer to objects, and
+the object's type determines which operations are valid.
 
-Python figures out a value's type for me when I assign it to a variable.
+## Running code
 
-For built-in modules, I can check the
-[Python standard library documentation](https://docs.python.org/3/library/).
+I can use the interactive interpreter for experiments or run a saved script:
+
+```text
+python script.py
+```
+
+## SRE relevance
+
+Python is commonly used for operational automation and service tooling. Make
+scripts observable with useful logs, explicit exit codes, timeouts for
+external calls, and tests for failure paths.
+
+The [standard library documentation](https://docs.python.org/3/library/)
+describes the modules included with Python.

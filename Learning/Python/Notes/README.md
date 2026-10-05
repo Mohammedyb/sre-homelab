@@ -1,6 +1,7 @@
 # Python Notes
 
-I keep my Python notes grouped by topic. Each file covers one idea.
+This index groups Python notes by topic, with practical details for automation
+and production work where they apply.
 
 ## Categories
 

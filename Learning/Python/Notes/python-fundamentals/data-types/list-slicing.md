@@ -1,19 +1,25 @@
 # List slicing
 
-I use a slice to get several items from a list. The stop index is not
-included.
+## Overview
+
+Slicing selects a range of items. The start index is included and the stop
+index is excluded; the optional third value is the step.
 
 ```python
-names = ["Ada", "Grace", "Katherine", "Guido"]
-print(names[1:3])  # ["Grace", "Katherine"]
+services = ["api", "worker", "database", "cache"]
+print(services[1:3])
+print(services[::2])
 ```
 
-I can leave out the start or stop to take items from the beginning or through
-the end:
+I can omit the start or stop to slice from the beginning or through the end:
 
 ```python
-print(names[:2])  # First two items
-print(names[2:])  # From index 2 to the end
+print(services[:2])
+print(services[2:])
 ```
 
-A slice makes a new list; it doesn't change the original.
+## Common mistakes
+
+A slice creates a new list, so changing it does not change the original
+list's top-level items. It is a shallow copy: nested mutable objects remain
+shared.

@@ -1,11 +1,14 @@
-# Dictionary `.items()`
+# Dictionary `items()`
 
-I use `.items()` to get a view of a dictionary's key-value pairs. I can loop
-through the pairs by unpacking each one into two variables.
+`dict.items()` returns a dynamic view of a dictionary's key-value pairs. It
+can be iterated by unpacking each pair:
 
 ```python
 schedule = {"Ada": "11:00", "Grace": "13:00"}
 
-for name, time in schedule.items():
-    print(name, time)
+for service, healthy in {"api": True, "worker": False}.items():
+    print(service, healthy)
 ```
+
+The view reflects changes to its dictionary; do not structurally modify a
+dictionary while iterating over its items.

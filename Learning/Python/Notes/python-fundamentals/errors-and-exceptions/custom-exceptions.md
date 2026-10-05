@@ -1,28 +1,42 @@
 # Custom exceptions
 
-In my division example, `raise Exception("Divisor cannot be 0")` raises the
-general `Exception` type with my message. To create a custom exception type, I
-define a class that inherits from `Exception`.
+## Overview
+
+A custom exception type distinguishes an application-specific failure from
+built-in errors. Define one when callers need to handle that failure
+differently; otherwise, a built-in exception with a clear message is usually
+sufficient.
 
 ```python
-class InvalidDivisorError(Exception):
+class InvalidConfigurationError(ValueError):
     pass
 
 
-def remainder_division(a, b):
-    if b == 0:
-        raise InvalidDivisorError("Divisor cannot be 0")
+def parse_port(value):
+    try:
+        port = int(value)
+    except ValueError as error:
+        raise InvalidConfigurationError("port must be an integer") from error
 
-    result = a // b
-    remainder = a % b
-    print(a, "/", b, "is", result, "remainder", remainder)
+    if not 1 <= port <= 65535:
+        raise InvalidConfigurationError("port must be between 1 and 65535")
+    return port
 
-try:
-    remainder_division(10, 0)
-except InvalidDivisorError as error:
-    print(error)
+
+port = parse_port("8080")
 ```
 
-The exception class gives this error its own type, and the message explains
-what went wrong. I can catch it by type with `except`. If I don't catch it,
-the program stops and reports the error.
+Subclassing `ValueError` makes the error meaningful to callers expecting
+invalid input. `raise ... from error` preserves the original cause.
+
+## Common mistakes
+
+- Avoid inheriting directly from `BaseException`; custom application errors
+  should normally inherit from `Exception` or a suitable subclass.
+- Do not catch and discard the exception. Log or report actionable context at
+  the boundary that can recover.
+
+## SRE relevance
+
+Typed exceptions let automation distinguish invalid configuration from
+transient infrastructure failures and choose an appropriate response.

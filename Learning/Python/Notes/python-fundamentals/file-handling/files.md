@@ -1,21 +1,21 @@
 # Files
 
-A file stores data on a computer so it can still be there after my program
-stops. It has a name and a location, called its path. A text file can store
-plain text, such as notes or JSON data.
+## Overview
 
-I use `open()` to access a file. It gives me a file object that I can read
-from or write to. A [`with` statement](../keywords/with.md) closes the file
-for me when I'm done.
+A file stores data beyond the lifetime of a process. `open()` returns a file
+object used to read or write data; the path identifies where the file is.
+
+Use a [`with` statement](../keywords/with.md) so the file is closed even if
+an exception occurs:
 
 ```python
 with open("notes.txt", "r", encoding="utf-8") as file:
     contents = file.read()
 ```
 
-I can read the whole file with [`read()`](read.md), one line with
-[`readline()`](readline.md), or the remaining lines as a list with
-[`readlines()`](readlines.md).
+Use [`read()`](read.md) for the remaining contents, [`readline()`](readline.md)
+for one line, or [`readlines()`](readlines.md) for a list of remaining lines.
+For large files, iterate over the file object to process one line at a time.
 
 The mode controls what I do with the file. See [file modes](file-modes.md)
 for the common options.
@@ -28,7 +28,17 @@ with open("notes.txt", "a", encoding="utf-8") as file:
     file.write("\nMore notes")
 ```
 
-I can use a path instead of just a file name to work with a file in another
-folder. An [absolute path](absolute-path.md) gives the file's full location.
-A [relative path](relative-path.md) locates it from the current working
-directory.
+## Common mistakes
+
+- `"w"` replaces existing contents; confirm the mode before opening.
+- Text files should use an explicit encoding such as UTF-8.
+- A relative path uses the process's working directory, not necessarily the
+  directory containing the script.
+
+See [file modes](file-modes.md), [absolute paths](absolute-path.md), and
+[relative paths](relative-path.md).
+
+## SRE relevance
+
+Use bounded or streaming reads for large logs and data files. Handle missing
+files, permission errors, and partial writes explicitly in automation.

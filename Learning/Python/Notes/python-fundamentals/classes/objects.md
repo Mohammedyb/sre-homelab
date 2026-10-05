@@ -1,18 +1,32 @@
 # Objects
 
-An object is a value I can work with in Python. Objects have a type and can
-hold data or provide behavior. When I create an object from a class, I call
-it an instance of that class.
+## Overview
+
+Every Python value is an object with a type and identity. An instance created
+from a user-defined class can carry state in attributes and behavior in
+methods.
+
+## Example
 
 ```python
-class Movie:
-    def __init__(self, title):
-        self.title = title
+class CheckResult:
+    def __init__(self, healthy):
+        self.healthy = healthy
 
-movie = Movie("The Grinch")
-print(movie.title)
+
+result = CheckResult(True)
+print(result.healthy)
 ```
 
-Here, `movie` is an object and an instance of `Movie`. I use dot notation to
-read its `title` attribute. The class defines how its instances are created
-and what data or methods they have.
+`result` is an instance of `CheckResult`; dot notation accesses its
+`healthy` attribute.
+
+## Common mistakes
+
+Two variables can refer to the same mutable object. Mutating it through one
+reference is visible through the other. Copy mutable data deliberately when
+independent state is required.
+
+See [classes](classes.md) for defining a type and
+[dictionaries as objects](../data-types/dictionaries-as-objects.md) for a
+lightweight alternative for simple records.

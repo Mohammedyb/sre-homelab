@@ -1,12 +1,13 @@
 # `readline()`
 
-I use `readline()` to read the next line from a file. The returned string
-usually includes the line's newline character.
+`readline()` returns the next line from a file, usually including its newline
+character. Repeated calls advance through the file.
 
 ```python
 with open("notes.txt", "r", encoding="utf-8") as file:
     first_line = file.readline()
 ```
 
-Calling it again reads the next line. At the end of the file, it returns an
-empty string.
+At end-of-file it returns an empty string. When processing every line, a
+`for line in file` loop is generally simpler and avoids loading all lines at
+once.

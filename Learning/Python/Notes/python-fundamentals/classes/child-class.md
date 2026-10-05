@@ -1,19 +1,32 @@
 # Child classes
 
-A child class (also called a subclass) inherits from a parent class. I put
-the parent class name in parentheses. The child can use inherited methods and
-add its own behavior.
+## Overview
+
+A child class (subclass) inherits behavior from a parent class (base class).
+It can add behavior or specialize a method, but inheritance is best used for
+a genuine "is a" relationship.
+
+## Example
 
 ```python
-class Dog:
-    def bark(self):
-        return "Woof!"
+class HealthCheck:
+    def run(self):
+        return {"ok": True}
 
 
-class RobotDog(Dog):
-    def charge(self):
-        return "Charging"
+class HttpHealthCheck(HealthCheck):
+    def __init__(self, url):
+        self.url = url
 ```
 
-Here, `RobotDog` inherits from `Dog`, so its instances can use `bark()` as
-well as `charge()`.
+`HttpHealthCheck` inherits `run()` and can add HTTP-specific behavior.
+
+## Common mistakes
+
+- A child class inherits methods, not automatically initialized instance
+  attributes. Call the parent's `__init__()` when the parent needs setup.
+- Avoid deep inheritance trees; composition is often simpler when components
+  merely work together.
+
+See [parent classes](parent-class.md), [inheritance](inheritance.md), and
+[method overriding](method-overriding.md).

@@ -1,17 +1,20 @@
 # `raise`
 
-I use `raise` to deliberately signal an exception when my code can't continue
-normally. I can raise a built-in exception and include a helpful message.
+## Overview
+
+Use `raise` to signal that an operation cannot continue under its current
+inputs or state. Choose an exception type that describes the failure.
 
 ```python
-def divide(a, b):
-    if b == 0:
-        raise ZeroDivisionError("The divisor can't be zero.")
-    return a / b
+def require_timeout(timeout_seconds):
+    if timeout_seconds <= 0:
+        raise ValueError("timeout_seconds must be positive")
 ```
 
-If I don't catch the exception, it stops the current operation and reports an
-error. I can handle it with a matching `except` block; see
-[`try` and `except`](try-except.md).
+An unhandled exception propagates to the caller. Catch it only where there is
+a recovery or reporting action; see [`try` and `except`](try-except.md).
 
-For an example, see [`ZeroDivisionError`](zero-division-error.md).
+Use a bare `raise` inside an exception handler to re-raise the current
+exception without losing its traceback. See
+[custom exceptions](custom-exceptions.md) when callers need a distinct error
+type.

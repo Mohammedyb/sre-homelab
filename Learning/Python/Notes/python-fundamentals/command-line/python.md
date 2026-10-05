@@ -1,13 +1,19 @@
 # Running Python from the command line
 
-I can type `python` in a terminal to open the interactive shell and run code
-one line at a time. I type `exit()` to leave it.
+The `python` command starts the interactive interpreter. Enter `exit()` or
+send the shell's end-of-input shortcut to leave it.
 
-To run a saved Python file, I use `python` followed by the file name:
+Run a script by passing its path:
 
 ```text
 python my_script.py
 ```
 
-I run the command from the folder containing the file, or give the file's path.
-For example, `python folder/my_script.py`.
+```text
+python folder/my_script.py
+```
+
+The process's current working directory remains the directory where the
+command was launched; it is not automatically changed to the script's
+directory. Use the intended virtual environment's interpreter when project
+dependencies matter.

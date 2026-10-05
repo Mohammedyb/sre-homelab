@@ -1,21 +1,36 @@
 # The `requests` package
 
-I can use the third-party `requests` package to send HTTP requests. I install
-it with `pip`, then import it in my code.
+## Overview
+
+`requests` is a third-party HTTP client. Install it in the project's
+[virtual environment](../package-management/virtual-environments.md):
 
 ```text
 python -m pip install requests
 ```
 
-For example, I can send a GET request and read a JSON response:
+## Example
 
 ```python
 import requests
 
-response = requests.get("https://api.example.com/items", timeout=10)
+response = requests.get("https://api.example.com/health", timeout=(2, 5))
 response.raise_for_status()
-items = response.json()
+health = response.json()
 ```
 
-`raise_for_status()` raises an error if the server returns an unsuccessful
-status code. The `timeout` sets how long the request waits for a response.
+`raise_for_status()` raises an exception for unsuccessful HTTP status codes.
+The connect/read timeout tuple bounds waiting; it is not necessarily a total
+request deadline.
+
+## Common mistakes
+
+- Always set a timeout; requests otherwise can wait indefinitely.
+- A timeout does not automatically make retrying safe. Consider idempotency,
+  retry limits, backoff, and the operation's deadline.
+- Check and validate the response before trusting its content.
+
+## SRE relevance
+
+External calls are failure boundaries. Record useful status and latency
+context, and avoid logging credentials or sensitive response data.

@@ -1,15 +1,22 @@
 # List indexing
 
-I use an index to get or change one item in a list. Indexes start at `0`, so
-the first item is at index `0`. Negative indexes count from the end; `-1` is
-the last item.
+## Overview
+
+Indexes select one item from a sequence. Python indexes start at `0`;
+negative indexes count from the end, with `-1` selecting the last item.
 
 ```python
-names = ["Ada", "Grace", "Katherine"]
-print(names[0])   # Ada
-print(names[-1])  # Katherine
+targets = ["api", "worker", "database"]
+first_target = targets[0]
+last_target = targets[-1]
 
-names[1] = "Guido"  # Replace an item
+targets[1] = "scheduler"
 ```
 
-An index outside the list's range raises `IndexError`.
+## Common mistakes
+
+An index outside the valid range raises `IndexError`. Check that a sequence
+is non-empty before selecting an item, or handle the exception if its length
+is not known.
+
+See [lists](list.md) and [slicing](list-slicing.md).

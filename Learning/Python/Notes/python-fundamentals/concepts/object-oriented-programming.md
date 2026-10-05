@@ -1,22 +1,41 @@
 # Object-oriented programming
 
-Object-oriented programming (OOP) is a way to organize code around objects.
-Objects combine data (attributes) with actions (methods). I define a
-[`class`](../classes/classes.md) to describe the objects I want to create.
+## Overview
+
+Object-oriented programming (OOP) groups related state and behavior into
+objects. It is one way to structure a program, not a requirement for every
+problem.
+
+## Example
 
 ```python
-class Movie:
-    def __init__(self, title):
-        self.title = title
+class ProbeResult:
+    def __init__(self, target, latency_ms):
+        self.target = target
+        self.latency_ms = latency_ms
 
-    def describe(self):
-        return f"Movie: {self.title}"
+    def is_slow(self, threshold_ms):
+        return self.latency_ms > threshold_ms
 
-movie = Movie("The Grinch")
-print(movie.describe())
+
+result = ProbeResult("api", 120)
+print(result.is_slow(100))
 ```
 
-Here, `Movie` is the class, `movie` is an object, `title` is an attribute,
-and `describe()` is a method. OOP helps me keep related data and behavior
-together. For simpler data, I can also use a
-[dictionary](../data-types/dictionaries-as-objects.md).
+The class keeps target data and latency-related behavior together.
+
+## Trade-offs
+
+Classes help when state has invariants or several operations. For simple
+records or stateless transformations, dictionaries and functions can be
+clearer. Avoid classes that add indirection without owning meaningful state
+or behavior.
+
+## SRE relevance
+
+OOP can organize reusable clients, health checks, and policy objects. Keep
+network and filesystem effects explicit so unit tests can exercise logic
+without production dependencies.
+
+See [classes](../classes/classes.md) and
+[dictionaries as objects](../data-types/dictionaries-as-objects.md).

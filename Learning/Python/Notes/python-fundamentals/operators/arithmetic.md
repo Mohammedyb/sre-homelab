@@ -1,6 +1,6 @@
 # Arithmetic operators
 
-I use arithmetic operators to do calculations.
+Arithmetic operators perform numeric calculations.
 
 | Operator | Operation | Example |
 | --- | --- | --- |
@@ -11,3 +11,10 @@ I use arithmetic operators to do calculations.
 | `%` | Remainder | `5 % 2` is `1` |
 | `**` | Exponentiation | `2 ** 3` is `8` |
 | `//` | Floor division (rounds down) | `5 // 2` is `2` |
+
+`/` returns a floating-point result, while `//` rounds down toward negative
+infinity. `%` returns the remainder. Division by zero raises
+[`ZeroDivisionError`](../errors-and-exceptions/zero-division-error.md).
+
+When calculating durations or rates, keep units explicit and guard
+denominators that can be zero.

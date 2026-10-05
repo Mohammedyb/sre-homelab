@@ -1,19 +1,32 @@
 # Dictionaries as objects
 
-I can use a dictionary to represent something by storing its details as
-key-value pairs. The keys act like named properties, and the values hold the
-details.
+## Overview
+
+A dictionary is useful for a lightweight record with named fields. Keys are
+hashable values; unlike a class instance, a dictionary does not enforce a
+fixed schema.
 
 ```python
-movie = {
-    "title": "The Grinch",
-    "showtime": "11:00am",
+service = {
+    "name": "api",
+    "healthy": True,
+    "latency_ms": 42,
 }
 
-print(movie["title"])
-print(movie["showtime"])
+if service["healthy"]:
+    print(service["name"], service["latency_ms"])
 ```
 
-I can keep several records in a list of dictionaries and loop through them.
-This is a simple way to represent data, but it is not the same as creating
-objects from a [Python class](../classes/classes.md).
+## Common mistakes
+
+Misspelled or absent keys can raise `KeyError`. Validate data received from
+files or APIs rather than assuming its shape.
+
+For behavior, validation, or stable invariants, consider a
+[class](../classes/classes.md). For basic key-value storage, see
+[dictionaries](dictionary.md).
+
+## SRE relevance
+
+Dictionaries are convenient for JSON payloads and structured log fields, but
+validate untrusted or changing external data before using required keys.

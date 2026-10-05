@@ -1,18 +1,35 @@
-# The `__init__()` method
+# `__init__()`
 
-I use `__init__()` to set up an object's attributes when I create an instance.
-Python calls it automatically when I create the object.
+## Overview
+
+Python calls `__init__()` after creating an instance. I use it to establish
+the instance's initial state and validate constructor inputs.
+
+## Example
 
 ```python
-class Movie:
-    def __init__(self, title, showtime):
-        self.title = title
-        self.showtime = showtime
+class RetryPolicy:
+    def __init__(self, attempts, delay_seconds):
+        if attempts < 1:
+            raise ValueError("attempts must be at least 1")
+        self.attempts = attempts
+        self.delay_seconds = delay_seconds
 
-movie = Movie("The Grinch", "11:00am")
-print(movie.title)
+
+policy = RetryPolicy(attempts=3, delay_seconds=1)
 ```
 
-`self` refers to the new instance. The values I pass when creating `movie`
-are given to `title` and `showtime`, then saved as instance attributes.
-`__init__()` initializes the instance; it is not the method that creates it.
+`self` refers to the new instance. `__init__()` initializes it; `__new__()`
+is responsible for creating it.
+
+## Common mistakes
+
+- Assign constructor values to `self` if they must persist on the instance.
+- Do not return a value from `__init__()`; it must return `None`.
+- Validate configuration early so invalid state does not propagate into
+  runtime operations.
+
+## SRE relevance
+
+Configuration objects can reject invalid retry limits, timeouts, or endpoint
+values when they are created, rather than failing later during an incident.

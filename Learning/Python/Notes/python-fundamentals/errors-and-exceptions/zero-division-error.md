@@ -1,20 +1,29 @@
 # `ZeroDivisionError`
 
-I get a `ZeroDivisionError` when I try to divide a number by zero with `/`,
-`//`, or `%`.
+## Overview
+
+Python raises `ZeroDivisionError` when a numeric operation divides by zero,
+including `/`, `//`, and `%`.
 
 ```python
-result = 10 / 0  # Raises ZeroDivisionError
+result = 10 / 0
 ```
 
-I can check the divisor before dividing:
+If zero is a valid input but the operation is not defined, handle the case
+explicitly:
 
 ```python
-def divide(a, b):
-    if b == 0:
-        raise ZeroDivisionError("The divisor can't be zero.")
-    return a / b
+def utilization(used, capacity):
+    if capacity == 0:
+        return None
+    return used / capacity
 ```
 
-I can also [handle the exception](try-except.md) if division by zero is a
-possible input.
+Returning `None` is appropriate only if callers understand and handle that
+meaning. See [`try` and `except`](try-except.md) for exception handling.
+
+## SRE relevance
+
+Guard calculations such as utilization and rates against zero denominators,
+and define what the metric should mean when there is no capacity or no
+observations.

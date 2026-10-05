@@ -1,16 +1,27 @@
 # Scope
 
-Scope is where Python can find a name, such as a variable or function. A name
-created inside a function is local to that function.
+## Overview
+
+Scope determines where a name can be accessed. Python resolves local names
+before enclosing-function, global, and built-in names (LEGB lookup).
 
 ```python
-def greet():
-    message = "Hello"
-    print(message)
+def build_check_name(service):
+    prefix = "health"
+    return f"{prefix}-{service}"
 
-greet()
+
+check_name = build_check_name("api")
 ```
 
-I can't use `message` outside `greet()`. When Python looks up a name, it
-checks the local scope first, then enclosing functions, the global scope, and
-built-ins.
+`prefix` is local to the call and is not available outside the function.
+
+## Common mistakes
+
+Avoid using `global` to share mutable program state; pass dependencies and
+values explicitly. A local assignment can shadow a name from an outer scope.
+
+## SRE relevance
+
+Explicit configuration and function parameters make scripts easier to test
+and safer to reuse across environments.

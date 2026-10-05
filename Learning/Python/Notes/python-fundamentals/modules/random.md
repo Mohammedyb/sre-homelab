@@ -1,7 +1,7 @@
 # `random` module
 
-I use Python's `random` module to generate pseudo-random values, such as a
-number for a dice roll.
+Python's `random` module generates pseudo-random values. It is useful for
+simulation and non-security-sensitive sampling.
 
 ```python
 import random
@@ -9,4 +9,6 @@ import random
 roll = random.randint(1, 6)
 ```
 
-`randint(a, b)` can return any integer from `a` to `b`, including both ends.
+`randint(a, b)` includes both endpoints. Do not use `random` for tokens,
+passwords, or security decisions; use `secrets` for security-sensitive
+randomness.

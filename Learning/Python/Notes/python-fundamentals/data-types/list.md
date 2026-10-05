@@ -1,23 +1,26 @@
 # Lists
 
-I use a list (`list`) to keep items in order. Lists can hold different types
-of values, including other lists. They can also be changed after I create them.
+## Overview
+
+A list is an ordered, mutable collection. It can contain values of different
+types and can be updated after creation.
 
 ```python
-empty = []
-names = ["Ada", "Grace"]
-mixed = ["score", 10, True]
-nested = [[1, 2], [3, 4]]
+pending_checks = ["api", "database"]
+pending_checks.append("worker")
 ```
 
-I can access or change an item by its index, or get part of a list with a
-slice:
+## Common mistakes
 
-```python
-names[0] = "Katherine"
-first_two = names[0:2]
-```
+Lists are mutable, so aliases share changes. A list slice is shallow, and
+removing a missing value with `.remove()` raises `ValueError`.
 
-- [List indexing](list-indexing.md)
-- [List slicing](list-slicing.md)
-- [List methods](../methods/list-append.md), including adding and removing items
+## SRE relevance
+
+Lists are useful for ordered work queues and results. For large streams,
+process items incrementally rather than accumulating unbounded data in
+memory.
+
+See [indexing](list-indexing.md), [slicing](list-slicing.md), and list
+methods for [adding](../methods/list-append.md) and
+[removing](../methods/list-remove.md) items.
