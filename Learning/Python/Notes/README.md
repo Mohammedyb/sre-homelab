@@ -47,6 +47,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
 - **Errors and exceptions**
   - [Exceptions](python-fundamentals/errors-and-exceptions/exceptions.md)
   - [`KeyError`](python-fundamentals/errors-and-exceptions/keyerror.md)
+  - [`raise`](python-fundamentals/errors-and-exceptions/raise.md)
   - [Syntax errors](python-fundamentals/errors-and-exceptions/syntax-errors.md)
   - [`try` and `except`](python-fundamentals/errors-and-exceptions/try-except.md)
 - **Keywords**

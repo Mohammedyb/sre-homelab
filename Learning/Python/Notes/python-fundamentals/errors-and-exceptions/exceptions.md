@@ -7,3 +7,5 @@ unexpectedly.
 See [`try` and `except`](try-except.md) for how I handle exceptions.
 I can use `finally` for cleanup code that should run whether an exception
 happened or not.
+
+I can also deliberately trigger an exception with [`raise`](raise.md).
