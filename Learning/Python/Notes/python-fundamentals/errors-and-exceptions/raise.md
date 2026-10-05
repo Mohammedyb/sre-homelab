@@ -13,3 +13,5 @@ def divide(a, b):
 If I don't catch the exception, it stops the current operation and reports an
 error. I can handle it with a matching `except` block; see
 [`try` and `except`](try-except.md).
+
+For an example, see [`ZeroDivisionError`](zero-division-error.md).
