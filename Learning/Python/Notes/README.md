@@ -53,7 +53,9 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [`try` and `except`](python-fundamentals/errors-and-exceptions/try-except.md)
   - [`ZeroDivisionError`](python-fundamentals/errors-and-exceptions/zero-division-error.md)
 - **File handling**
+  - [Absolute paths](python-fundamentals/file-handling/absolute-path.md)
   - [Files](python-fundamentals/file-handling/files.md)
+  - [Relative paths](python-fundamentals/file-handling/relative-path.md)
 - **Keywords**
   - [break](python-fundamentals/keywords/break.md)
   - [Conditional keywords: if, elif, and else](python-fundamentals/keywords/conditionals.md)

@@ -27,4 +27,6 @@ with open("notes.txt", "a", encoding="utf-8") as file:
 ```
 
 I can use a path instead of just a file name to work with a file in another
-folder.
+folder. An [absolute path](absolute-path.md) gives the file's full location.
+A [relative path](relative-path.md) locates it from the current working
+directory.
