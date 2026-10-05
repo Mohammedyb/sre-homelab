@@ -8,12 +8,16 @@ def find_acronyms():
     look_up = input("What software acronym would you like to look up? \n")
 
     found = False
-    with open(ACRONYMS_FILE) as file:
-        for line in file:
-            if look_up in line:
-                print(line)
-                found = True
-                break
+    try:
+        with open(ACRONYMS_FILE) as file:
+            for line in file:
+                if look_up in line:
+                    print(line)
+                    found = True
+                    break
+    except FileNotFoundError as e:
+        print("File not Found") 
+        return           
 
     if not found:
         print("The acronym does not exist")        
