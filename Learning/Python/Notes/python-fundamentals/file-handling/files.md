@@ -17,11 +17,8 @@ I can read the whole file with [`read()`](read.md), one line with
 [`readline()`](readline.md), or the remaining lines as a list with
 [`readlines()`](readlines.md).
 
-The mode controls what I do with the file:
-
-- `"r"` reads an existing file.
-- `"w"` writes to a file, replacing its contents or creating it if needed.
-- `"a"` adds to the end of a file, creating it if needed.
+The mode controls what I do with the file. See [file modes](file-modes.md)
+for the common options.
 
 ```python
 with open("notes.txt", "w", encoding="utf-8") as file:

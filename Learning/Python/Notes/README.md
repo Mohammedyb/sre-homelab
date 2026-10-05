@@ -54,6 +54,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [`ZeroDivisionError`](python-fundamentals/errors-and-exceptions/zero-division-error.md)
 - **File handling**
   - [Absolute paths](python-fundamentals/file-handling/absolute-path.md)
+  - [File modes](python-fundamentals/file-handling/file-modes.md)
   - [Files](python-fundamentals/file-handling/files.md)
   - [`read()`](python-fundamentals/file-handling/read.md)
   - [`readline()`](python-fundamentals/file-handling/readline.md)
