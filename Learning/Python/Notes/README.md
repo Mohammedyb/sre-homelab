@@ -52,6 +52,8 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [Syntax errors](python-fundamentals/errors-and-exceptions/syntax-errors.md)
   - [`try` and `except`](python-fundamentals/errors-and-exceptions/try-except.md)
   - [`ZeroDivisionError`](python-fundamentals/errors-and-exceptions/zero-division-error.md)
+- **File handling**
+  - [Files](python-fundamentals/file-handling/files.md)
 - **Keywords**
   - [break](python-fundamentals/keywords/break.md)
   - [Conditional keywords: if, elif, and else](python-fundamentals/keywords/conditionals.md)
