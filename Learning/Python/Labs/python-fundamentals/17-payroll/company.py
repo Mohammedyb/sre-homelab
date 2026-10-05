@@ -1,4 +1,8 @@
 from employee import Employee
+from salaryemployee import SalaryEmployee
+from hourlyemployee import HourlyEmployee
+from comissionemployee import ComissionEmployee
+
 
 class Company:
     def __init__(self):
@@ -22,16 +26,16 @@ class Company:
 def main():
     my_company = Company()
 
-    employee1 = Employee('Mohammed','Bubshait', 100000)
+    employee1 = SalaryEmployee('Mohammed','Bubshait', 100000)
     my_company.add_emplyoee(employee1)   
     
-    employee2 = Employee('Bianca','Bubshait', 200000)
+    employee2 = SalaryEmployee('Bianca','Bubshait', 50000)
     my_company.add_emplyoee(employee2)
     
-    employee3 = Employee('Ibrahim','Bubshait', 50000)
+    employee3 = HourlyEmployee('Ibrahim','Bubshait', 25, 50)
     my_company.add_emplyoee(employee3)
     
-    employee4 = Employee('Abdulaziz','Bubshait', 25000)
+    employee4 = ComissionEmployee('Abdulaziz','Bubshait', 30000, 5, 200)
     my_company.add_emplyoee(employee4)
 
     my_company.display_employees()
