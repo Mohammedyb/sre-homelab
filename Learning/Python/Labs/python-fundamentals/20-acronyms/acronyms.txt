@@ -1,0 +1,17 @@
+OOP - Object-oriented programming
+IDE - Integrated development environment
+UX - User experience
+JSON - JavaScript Object Notation
+FIFO - First in, first out
+LIFO - Last in, first out
+TDD - Test-driven development
+SaaS - Software as a service
+PaaS - Platform as a service
+IaaS - Infrastructure as a service
+API - Application programming interface
+CI - Continuous integration
+CD - Continuous delivery or continuous deployment
+SRE - Site reliability engineering
+SLI - Service level indicator
+SLO - Service level objective
+SLA - Service level agreement
