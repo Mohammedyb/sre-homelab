@@ -5,12 +5,17 @@ stops. It has a name and a location, called its path. A text file can store
 plain text, such as notes or JSON data.
 
 I use `open()` to access a file. It gives me a file object that I can read
-from or write to. A `with` block closes the file for me when I'm done.
+from or write to. A [`with` statement](../keywords/with.md) closes the file
+for me when I'm done.
 
 ```python
 with open("notes.txt", "r", encoding="utf-8") as file:
     contents = file.read()
 ```
+
+I can read the whole file with [`read()`](read.md), one line with
+[`readline()`](readline.md), or the remaining lines as a list with
+[`readlines()`](readlines.md).
 
 The mode controls what I do with the file:
 

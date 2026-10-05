@@ -55,6 +55,9 @@ I keep my Python notes grouped by topic. Each file covers one idea.
 - **File handling**
   - [Absolute paths](python-fundamentals/file-handling/absolute-path.md)
   - [Files](python-fundamentals/file-handling/files.md)
+  - [`read()`](python-fundamentals/file-handling/read.md)
+  - [`readline()`](python-fundamentals/file-handling/readline.md)
+  - [`readlines()`](python-fundamentals/file-handling/readlines.md)
   - [Relative paths](python-fundamentals/file-handling/relative-path.md)
 - **Keywords**
   - [break](python-fundamentals/keywords/break.md)
@@ -62,6 +65,7 @@ I keep my Python notes grouped by topic. Each file covers one idea.
   - [for](python-fundamentals/keywords/for.md)
   - [import](python-fundamentals/keywords/import.md)
   - [in](python-fundamentals/keywords/in.md)
+  - [`with`](python-fundamentals/keywords/with.md)
 - **Methods**
   - [Dictionary get()](python-fundamentals/methods/dictionary-get.md)
   - [Dictionary items()](python-fundamentals/methods/dictionary-items.md)
