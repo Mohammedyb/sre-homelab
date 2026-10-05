@@ -15,6 +15,8 @@ Each key in a dictionary must be unique.
 
 I can use [`.get()`](../methods/dictionary-get.md) to look up a key without
 getting an error if it is missing.
+Looking up a missing key with square brackets raises a
+[`KeyError`](../errors-and-exceptions/keyerror.md).
 
 I can use [`.items()`](../methods/dictionary-items.md) to loop through the
 keys and values together.
