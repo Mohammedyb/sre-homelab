@@ -1,9 +1,20 @@
+# Exercise: Acronym Lookup
+#
+# Search for common software acronyms or add a new one to a local dictionary file.
+#
+# Concepts:
+# - File handling
+# - `pathlib`
+# - User input
+# - Conditionals
+# - Basic persistence
 
 from pathlib import Path
 
-ACRONYMS_FILE = Path(__file__).with_name("acronyms.txt")
+ACRONYMS_FILE = Path(__file__).with_name("software_acronyms.txt")
 
 
+# Look up an acronym in the saved lookup file.
 def find_acronyms():
     look_up = input("What software acronym would you like to look up? \n")
 
@@ -15,30 +26,29 @@ def find_acronyms():
                     print(line)
                     found = True
                     break
-    except FileNotFoundError as e:
-        print("File not Found") 
-        return           
+    except FileNotFoundError:
+        print("File not Found")
+        return
 
     if not found:
-        print("The acronym does not exist")        
+        print("The acronym does not exist")
 
-def add_acronyms(): 
-     # ask user what acronym they want to add
-     acronym = input("What acronym do you want to add? \n")
-    # ask the user for the definition
-     definition = input ("what is the definition?\n")
-    #open the file 
-     with open(ACRONYMS_FILE, 'a') as file:
-        
-        #write the acronym to the new file 
+
+# Add a new acronym and definition to the file.
+def add_acronyms():
+    acronym = input("What acronym do you want to add? \n")
+    definition = input("what is the definition?\n")
+
+    with open(ACRONYMS_FILE, 'a') as file:
         file.write(acronym + " - " + definition + '\n')
 
+
+# Let the user choose whether to search or append an acronym.
 def main():
-    #ask the user if they want to find or add acronym
     choice = input("Do you want to find(F) or add (A) \n")
     if choice == 'F':
         find_acronyms()
     elif choice == 'A':
         add_acronyms()
 
-main()            
+main()

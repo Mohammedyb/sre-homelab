@@ -1,3 +1,14 @@
+# Exercise: Payroll
+#
+# Build a small payroll system using employee subclasses and a company container.
+#
+# Concepts:
+# - Classes
+# - Inheritance
+# - Object composition
+# - Methods
+# - Output formatting
+
 from employee import Employee
 from salaryemployee import SalaryEmployee
 from hourlyemployee import HourlyEmployee
@@ -6,7 +17,7 @@ from comissionemployee import ComissionEmployee
 
 class Company:
     def __init__(self):
-        self.employees =[]
+        self.employees = []
 
     def add_emplyoee(self, new_employee):
         self.employees.append(new_employee)
@@ -23,19 +34,21 @@ class Company:
             print(f"Amount: ${i.calculate_paycheck():,.2f}")
             print("------------------------------")
 
+
+# Create employees and pay each one using the company logic.
 def main():
     my_company = Company()
 
-    employee1 = SalaryEmployee('Mohammed','Bubshait', 100000)
-    my_company.add_emplyoee(employee1)   
-    
-    employee2 = SalaryEmployee('Bianca','Bubshait', 50000)
+    employee1 = SalaryEmployee('Mohammed', 'Bubshait', 100000)
+    my_company.add_emplyoee(employee1)
+
+    employee2 = SalaryEmployee('Bianca', 'Bubshait', 50000)
     my_company.add_emplyoee(employee2)
-    
-    employee3 = HourlyEmployee('Ibrahim','Bubshait', 25, 50)
+
+    employee3 = HourlyEmployee('Ibrahim', 'Bubshait', 25, 50)
     my_company.add_emplyoee(employee3)
-    
-    employee4 = ComissionEmployee('Abdulaziz','Bubshait', 30000, 5, 200)
+
+    employee4 = ComissionEmployee('Abdulaziz', 'Bubshait', 30000, 5, 200)
     my_company.add_emplyoee(employee4)
 
     my_company.display_employees()
