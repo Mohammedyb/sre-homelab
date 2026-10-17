@@ -1,0 +1,116 @@
+==================================================
+HACKERRANK: DETECT A CYCLE IN A LINKED LIST
+==================================================
+
+QUESTION
+--------------------------------------------------
+
+Given the head of a linked list, determine if it contains
+a cycle.
+
+A cycle means following the next pointers eventually takes
+you back to a node you have already visited.
+
+Return:
+- 1 if there is a cycle
+- 0 if there is no cycle
+
+An empty list (head = None) has no cycle.
+
+--------------------------------------------------
+
+EXAMPLE
+--------------------------------------------------
+
+NO CYCLE:
+
+1 -> 2 -> 3 -> None
+
+The list ends.
+
+Answer:
+
+0
+
+--------------------------------------------------
+
+CYCLE:
+
+1 -> 2 -> 3
+    ^     |
+    |_____|
+
+Node 3 points back to node 2.
+
+The list loops forever.
+
+Answer:
+
+1
+
+--------------------------------------------------
+
+WHAT IS THE QUESTION REALLY ASKING?
+--------------------------------------------------
+
+Follow the linked list using next pointers.
+
+Does the list eventually loop back to a node?
+
+YES = return 1
+NO = return 0
+
+--------------------------------------------------
+
+PATTERN TO RECOGNIZE
+--------------------------------------------------
+
+Words like:
+
+- detect a cycle
+- linked list loop
+- node points back
+- visited more than once
+
+Should make you think:
+
+Use two pointers moving at different speeds.
+
+This is called Floyd's Cycle Detection Algorithm.
+
+--------------------------------------------------
+
+HACKERRANK TEMPLATE
+--------------------------------------------------
+
+def has_cycle(head):
+    # Write your code here
+
+--------------------------------------------------
+
+EXPANDED ANSWER
+--------------------------------------------------
+
+def has_cycle(head):
+
+    # Start both pointers at the head.
+    slow = head
+    fast = head
+
+    # Make sure fast can safely move two steps.
+    while fast and fast.next:
+
+        # Slow moves one step.
+        slow = slow.next
+
+        # Fast moves two steps.
+        fast = fast.next.next
+
+        # If they meet, a cycle exists.
+        if slow == fast:
+            return 1
+
+    # Fast reached the end. No cycle exists.
+    return 0
+
+------------------------------------------------

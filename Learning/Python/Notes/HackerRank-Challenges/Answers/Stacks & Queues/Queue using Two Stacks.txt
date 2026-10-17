@@ -1,0 +1,323 @@
+==================================================
+HACKERRANK: QUEUE USING TWO STACKS
+==================================================
+
+QUESTION
+--------------------------------------------------
+
+Implement a queue using two stacks.
+
+A queue follows FIFO:
+
+First In, First Out.
+
+The first value added is the first value removed.
+
+There are three query types:
+
+1 x = Add x to the back of the queue.
+2   = Remove the front value.
+3   = Print the front value.
+
+Print an answer only for query type 3.
+
+--------------------------------------------------
+
+EXAMPLE
+--------------------------------------------------
+
+Queries:
+
+1 42
+2
+1 14
+3
+1 28
+3
+
+What happens?
+
+Add 42:
+Queue = [42]
+
+Remove the front:
+Queue = []
+
+Add 14:
+Queue = [14]
+
+Print the front:
+14
+
+Add 28:
+Queue = [14, 28]
+
+Print the front:
+14
+
+Output:
+
+14
+14
+
+--------------------------------------------------
+
+WHAT IS THE QUESTION REALLY ASKING?
+--------------------------------------------------
+
+Build a normal FIFO queue using two stacks.
+
+A stack is Last In, First Out (LIFO).
+A queue is First In, First Out (FIFO).
+
+Use one stack to receive new values and another stack
+to provide the oldest value first.
+
+--------------------------------------------------
+
+PATTERN TO RECOGNIZE
+--------------------------------------------------
+
+Words like:
+
+- queue
+- FIFO
+- enqueue
+- dequeue
+- print the front
+- implement using two stacks
+
+Should make you think:
+
+Use two stacks.
+
+in_stack receives new values.
+out_stack provides values in queue order.
+
+When out_stack is empty, move everything from in_stack
+to out_stack. This reverses the order so the oldest
+value is on top.
+
+--------------------------------------------------
+
+HACKERRANK TEMPLATE
+--------------------------------------------------
+
+q = int(input())
+
+in_stack = []
+out_stack = []
+
+--------------------------------------------------
+
+EXPANDED ANSWER
+--------------------------------------------------
+
+q = int(input())
+
+in_stack = []
+out_stack = []
+
+for _ in range(q):
+
+    query = input().split()
+
+    # Query 1: enqueue a value.
+    if query[0] == '1':
+        in_stack.append(query[1])
+
+    # Query 2: dequeue the front value.
+    elif query[0] == '2':
+
+        if not out_stack:
+            while in_stack:
+                out_stack.append(in_stack.pop())
+
+        out_stack.pop()
+
+    # Query 3: print the front value.
+    elif query[0] == '3':
+
+        if not out_stack:
+            while in_stack:
+                out_stack.append(in_stack.pop())
+
+        print(out_stack[-1])
+
+--------------------------------------------------
+
+SHORT ANSWER (SRE PREFERRED)
+--------------------------------------------------
+
+q = int(input())
+
+in_stack = []
+out_stack = []
+
+for _ in range(q):
+    query = input().split()
+
+    if query[0] == '1':
+        in_stack.append(query[1])
+
+    elif query[0] == '2':
+        if not out_stack:
+            while in_stack:
+                out_stack.append(in_stack.pop())
+        out_stack.pop()
+
+    else:
+        if not out_stack:
+            while in_stack:
+                out_stack.append(in_stack.pop())
+        print(out_stack[-1])
+
+--------------------------------------------------
+
+WHY THE SHORT ANSWER WORKS
+--------------------------------------------------
+
+STEP 1: Enqueue values.
+
+Query:
+
+1 42
+
+Run:
+
+in_stack.append(query[1])
+
+Now:
+
+in_stack = ['42']
+out_stack = []
+
+New values go into in_stack.
+
+--------------------------------------------------
+
+STEP 2: Move values only when needed.
+
+If out_stack is empty, move every value from in_stack:
+
+while in_stack:
+    out_stack.append(in_stack.pop())
+
+For example:
+
+in_stack = ['42', '14', '28']
+
+After moving:
+
+out_stack = ['28', '14', '42']
+
+The top of out_stack is 42, the oldest value.
+
+The oldest value is at:
+
+out_stack[-1]
+
+--------------------------------------------------
+
+STEP 3: Dequeue.
+
+Query:
+
+2
+
+If out_stack is empty, transfer the values from in_stack.
+
+Then remove the front value:
+
+out_stack.pop()
+
+This removes the oldest queued value.
+
+--------------------------------------------------
+
+STEP 4: Print the front.
+
+Query:
+
+3
+
+If out_stack is empty, transfer values from in_stack.
+
+Then print:
+
+print(out_stack[-1])
+
+The last item in out_stack is the front of the queue.
+
+--------------------------------------------------
+
+INTERVIEW EXPLANATION
+--------------------------------------------------
+
+I use two stacks to implement FIFO behavior.
+
+New elements go into in_stack. When I need to remove
+or print the front element, I check out_stack.
+
+If out_stack is empty, I move all elements from in_stack
+to out_stack. This reverses their order, putting the
+oldest element on top.
+
+Then I can remove it with pop() or read it with
+out_stack[-1].
+
+I only transfer values when out_stack is empty, so each
+element moves between the stacks at most once.
+
+--------------------------------------------------
+
+WHEN TO USE THIS PATTERN
+--------------------------------------------------
+
+Use this approach when:
+
+- Implementing a queue using stacks
+- Converting LIFO behavior into FIFO behavior
+- Processing commands or queries
+- Working with producer/consumer buffers
+- A problem asks for enqueue, dequeue, or front/peek
+
+--------------------------------------------------
+
+MEMORY TRICK
+--------------------------------------------------
+
+in_stack = NEW values go IN.
+
+out_stack = OLD values come OUT.
+
+If out_stack is empty:
+Move everything from in_stack to out_stack.
+
+Query 1 -> append to in_stack.
+Query 2 -> pop from out_stack.
+Query 3 -> print out_stack[-1].
+
+--------------------------------------------------
+
+TIME COMPLEXITY
+--------------------------------------------------
+
+Enqueue: O(1)
+
+Dequeue / print front: O(1) amortized.
+
+A single operation can take O(n) when values are
+transferred, but each value moves between the stacks
+at most once.
+
+--------------------------------------------------
+
+SPACE COMPLEXITY
+--------------------------------------------------
+
+O(n)
+
+The two stacks together store the queue's elements.
+
+==================================================

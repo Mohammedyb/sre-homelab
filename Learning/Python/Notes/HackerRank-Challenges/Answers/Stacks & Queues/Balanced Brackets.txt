@@ -1,0 +1,295 @@
+==================================================
+HACKERRANK: BALANCED BRACKETS
+==================================================
+
+QUESTION
+--------------------------------------------------
+
+Given a string containing brackets, determine whether
+all brackets are correctly matched and nested.
+
+Bracket types:
+
+()
+[]
+{}
+
+Return:
+- "YES" if balanced
+- "NO" if not balanced
+
+--------------------------------------------------
+
+EXAMPLE
+--------------------------------------------------
+
+String:
+
+{[()]}
+
+Every opening bracket has the correct closing bracket,
+and they close in the correct order.
+
+Answer:
+
+YES
+
+--------------------------------------------------
+
+String:
+
+{[(])}
+
+The brackets close in the wrong order.
+
+The opening parenthesis ( is followed by ] instead of ).
+
+Answer:
+
+NO
+
+--------------------------------------------------
+
+WHAT IS THE QUESTION REALLY ASKING?
+--------------------------------------------------
+
+Every opening bracket must have a matching closing bracket
+of the same type.
+
+The LAST bracket opened must be the FIRST one closed.
+
+--------------------------------------------------
+
+PATTERN TO RECOGNIZE
+--------------------------------------------------
+
+Words like:
+
+- balanced brackets
+- matching parentheses
+- nested brackets
+- opening and closing order
+
+Should make you think:
+
+Use a STACK.
+
+A stack follows Last In, First Out (LIFO).
+
+The last opening bracket added must be the first one matched.
+
+--------------------------------------------------
+
+HACKERRANK TEMPLATE
+--------------------------------------------------
+
+def isBalanced(s):
+    # Write your code here
+
+--------------------------------------------------
+
+EXPANDED ANSWER
+--------------------------------------------------
+
+def isBalanced(s):
+
+    stack = []
+
+    pairs = {
+        ')': '(',
+        ']': '[',
+        '}': '{'
+    }
+
+    for char in s:
+
+        # Save opening brackets.
+        if char in '([{':
+            stack.append(char)
+
+        # Check closing brackets.
+        else:
+            if not stack:
+                return "NO"
+
+            if stack.pop() != pairs[char]:
+                return "NO"
+
+    # Unmatched opening brackets remain.
+    if stack:
+        return "NO"
+
+    return "YES"
+
+--------------------------------------------------
+
+SHORT ANSWER (SRE PREFERRED)
+--------------------------------------------------
+
+def isBalanced(s):
+
+    stack = []
+    pairs = {')': '(', ']': '[', '}': '{'}
+
+    for char in s:
+        if char in '([{':
+            stack.append(char)
+        elif not stack or stack.pop() != pairs[char]:
+            return "NO"
+
+    return "YES" if not stack else "NO"
+
+--------------------------------------------------
+
+WHY THE SHORT ANSWER WORKS
+--------------------------------------------------
+
+Example:
+
+s = "{[()]}"
+
+STEP 1: Read opening brackets.
+
+Read '{':
+
+stack = ['{']
+
+Read '[':
+
+stack = ['{', '[']
+
+Read '(':
+
+stack = ['{', '[', '(']
+
+--------------------------------------------------
+
+STEP 2: Match closing brackets.
+
+Read ')':
+
+The latest opening bracket is '('.
+
+They match.
+
+Remove '(' from the stack.
+
+stack = ['{', '[']
+
+Read ']':
+
+The latest opening bracket is '['.
+
+They match.
+
+stack = ['{']
+
+Read '}':
+
+The latest opening bracket is '{'.
+
+They match.
+
+stack = []
+
+--------------------------------------------------
+
+STEP 3: Check the final stack.
+
+The stack is empty.
+
+Every opening bracket has been matched.
+
+Answer:
+
+YES
+
+--------------------------------------------------
+
+WHY {[(])} RETURNS NO
+--------------------------------------------------
+
+Read '{', '[', '('.
+
+stack = ['{', '[', '(']
+
+Next character is ']'.
+
+The latest opening bracket is '('.
+
+But ']' must match '['.
+
+They do not match.
+
+Answer:
+
+NO
+
+--------------------------------------------------
+
+INTERVIEW EXPLANATION
+--------------------------------------------------
+
+I use a stack to track opening brackets.
+
+When I see an opening bracket, I push it onto the stack.
+
+When I see a closing bracket, I check the most recent
+opening bracket to make sure the types match.
+
+If there is no opening bracket to match, or the types
+do not match, I return "NO".
+
+After processing the string, I return "YES" only if
+the stack is empty.
+
+--------------------------------------------------
+
+WHEN TO USE THIS PATTERN
+--------------------------------------------------
+
+Use a stack when you need to:
+
+- Match opening and closing brackets
+- Validate nested expressions
+- Check parentheses in code
+- Process items in reverse order of arrival
+- Solve Last In, First Out (LIFO) problems
+
+--------------------------------------------------
+
+MEMORY TRICK
+--------------------------------------------------
+
+OPENING bracket -> PUSH onto stack.
+
+CLOSING bracket -> POP and CHECK.
+
+Wrong match or nothing to pop -> NO.
+
+Stack empty at the end -> YES.
+
+Remember:
+
+LAST opened = FIRST closed.
+
+--------------------------------------------------
+
+TIME COMPLEXITY
+--------------------------------------------------
+
+O(n)
+
+Each character is processed once.
+
+--------------------------------------------------
+
+SPACE COMPLEXITY
+--------------------------------------------------
+
+O(n)
+
+In the worst case, all characters are opening brackets
+and must be stored in the stack.
+
+==================================================

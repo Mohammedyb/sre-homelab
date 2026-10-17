@@ -1,0 +1,275 @@
+==================================================
+HACKERRANK: DESIGNER PDF VIEWER
+==================================================
+
+QUESTION
+--------------------------------------------------
+
+You are given:
+
+1. A list of heights for letters a-z
+
+2. A word
+
+Each letter has:
+
+width = 1
+
+Find the highlighted area.
+
+Formula:
+
+Area = tallest letter height * word length
+
+--------------------------------------------------
+
+EXAMPLE
+--------------------------------------------------
+
+word = "abc"
+
+a = 1
+b = 3
+c = 1
+
+Tallest = 3
+
+Length = 3
+
+Area = 9
+
+--------------------------------------------------
+
+WHAT IS THE QUESTION REALLY ASKING?
+--------------------------------------------------
+
+Step 1:
+Find the tallest letter.
+
+Step 2:
+Count letters.
+
+Step 3:
+Multiply.
+
+That's it.
+
+--------------------------------------------------
+
+PATTERN TO RECOGNIZE
+--------------------------------------------------
+
+Words like:
+
+- tallest
+- highest
+- largest
+- greatest
+- maximum
+
+Should make you think:
+
+max()
+
+--------------------------------------------------
+
+HACKERRANK TEMPLATE
+--------------------------------------------------
+
+def designerPdfViewer(h, word):
+    # Write your code here
+
+--------------------------------------------------
+
+EXPANDED ANSWER
+--------------------------------------------------
+
+def designerPdfViewer(h, word):
+
+    tallest_height = 0
+
+    for letter in word:
+
+        # convert letter to array position
+        position = ord(letter) - ord('a')
+
+        # get this letter's height
+        letter_height = h[position]
+
+        # keep track of tallest height
+        if letter_height > tallest_height:
+            tallest_height = letter_height
+
+    return tallest_height * len(word)
+
+--------------------------------------------------
+
+SHORT ANSWER (SRE PREFERRED)
+--------------------------------------------------
+
+def designerPdfViewer(h, word):
+
+    return max(
+
+        # get height for every letter
+        h[ord(letter) - ord('a')]
+
+        for letter in word
+
+    ) * len(word)
+
+--------------------------------------------------
+
+WHY THE SHORT ANSWER WORKS
+--------------------------------------------------
+
+Question:
+
+How tall is each letter?
+
+Answer:
+
+h[index]
+
+--------------------------------------------------
+
+PROBLEM:
+
+Letters are not indexes.
+
+Array indexes are numbers.
+
+Need:
+
+a -> 0
+b -> 1
+c -> 2
+...
+z -> 25
+
+--------------------------------------------------
+
+SOLUTION
+
+ord(letter) - ord('a')
+
+Examples:
+
+ord('a') - ord('a')
+
+0
+
+----------------
+
+ord('b') - ord('a')
+
+1
+
+----------------
+
+ord('c') - ord('a')
+
+2
+
+----------------
+
+ord('z') - ord('a')
+
+25
+
+--------------------------------------------------
+
+Example
+
+word = "abc"
+
+h[0] = 1
+h[1] = 3
+h[2] = 1
+
+max(...)
+
+returns:
+
+3
+
+len(word)
+
+returns:
+
+3
+
+Answer:
+
+3 * 3
+
+= 9
+
+--------------------------------------------------
+
+INTERVIEW EXPLANATION
+--------------------------------------------------
+
+Question:
+
+Find highlighted area.
+
+Answer:
+
+Find tallest letter using max().
+
+Multiply by number of letters.
+
+--------------------------------------------------
+
+WHEN TO USE THIS PATTERN
+--------------------------------------------------
+
+Whenever a problem has:
+
+letters a-z
+
+and
+
+array positions 0-25
+
+Use:
+
+ord(letter) - ord('a')
+
+--------------------------------------------------
+
+MEMORY TRICK
+--------------------------------------------------
+
+Need biggest value?
+
+Use:
+
+max()
+
+Need length?
+
+Use:
+
+len()
+
+Need letter -> index?
+
+Use:
+
+ord(letter) - ord('a')
+
+--------------------------------------------------
+
+TIME COMPLEXITY
+--------------------------------------------------
+
+O(n)
+
+--------------------------------------------------
+
+SPACE COMPLEXITY
+--------------------------------------------------
+
+O(1)

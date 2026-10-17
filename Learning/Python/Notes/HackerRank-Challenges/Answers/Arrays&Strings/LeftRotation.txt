@@ -1,0 +1,191 @@
+==================================================
+HACKERRANK: LEFT ROTATION
+==================================================
+
+QUESTION
+--------------------------------------------------
+
+Given an array and a number d:
+
+Rotate the array left d times.
+
+--------------------------------------------------
+
+EXAMPLE
+--------------------------------------------------
+
+Array:
+
+[1, 2, 3, 4, 5]
+
+d = 2
+
+Move first 2 items to the end.
+
+Answer:
+
+[3, 4, 5, 1, 2]
+
+--------------------------------------------------
+
+WHAT IS THE QUESTION REALLY ASKING?
+--------------------------------------------------
+
+Take items from the front.
+
+Move them to the back.
+
+--------------------------------------------------
+
+PATTERN TO RECOGNIZE
+--------------------------------------------------
+
+Words like:
+
+- rotate
+- shift
+- circular array
+- move left
+
+Should make you think:
+
+Split array.
+Swap pieces.
+
+--------------------------------------------------
+
+HACKERRANK TEMPLATE
+--------------------------------------------------
+
+def rotLeft(a, d):
+    # Write your code here
+
+--------------------------------------------------
+
+EXPANDED ANSWER
+--------------------------------------------------
+
+def rotLeft(a, d):
+
+    first_part = a[:d]
+
+    second_part = a[d:]
+
+    return second_part + first_part
+
+--------------------------------------------------
+
+SHORT ANSWER (SRE PREFERRED)
+--------------------------------------------------
+
+def rotLeft(a, d):
+
+    return a[d:] + a[:d]
+
+--------------------------------------------------
+
+WHY THE SHORT ANSWER WORKS
+--------------------------------------------------
+
+Example:
+
+a = [1,2,3,4,5]
+
+d = 2
+
+--------------------------------------------------
+
+a[d:]
+
+means:
+
+start at index 2
+
+Result:
+
+[3,4,5]
+
+--------------------------------------------------
+
+a[:d]
+
+means:
+
+take everything before index 2
+
+Result:
+
+[1,2]
+
+--------------------------------------------------
+
+Combine:
+
+[3,4,5] + [1,2]
+
+Result:
+
+[3,4,5,1,2]
+
+--------------------------------------------------
+
+INTERVIEW EXPLANATION
+--------------------------------------------------
+
+Question:
+
+Rotate array left.
+
+Answer:
+
+Move first d elements to the end.
+
+Use:
+
+a[d:] + a[:d]
+
+--------------------------------------------------
+
+WHEN TO USE THIS PATTERN
+--------------------------------------------------
+
+Whenever you see:
+
+- array rotation
+- circular array
+- move elements left
+- shift data
+
+--------------------------------------------------
+
+MEMORY TRICK
+--------------------------------------------------
+
+Need to move front items
+to the back?
+
+Use:
+
+a[d:] + a[:d]
+
+Read it as:
+
+everything after d
+
++
+
+everything before d
+
+--------------------------------------------------
+
+TIME COMPLEXITY
+--------------------------------------------------
+
+O(n)
+
+--------------------------------------------------
+
+SPACE COMPLEXITY
+--------------------------------------------------
+
+O(n)

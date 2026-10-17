@@ -1,0 +1,244 @@
+==================================================
+HACKERRANK: INSERT A NODE AT A SPECIFIC POSITION
+==================================================
+
+QUESTION
+--------------------------------------------------
+
+Given the head of a linked list, a value (data), and a position:
+
+Create a new node and insert it at that position.
+Return the head of the updated linked list.
+
+Positions start at 0:
+- Position 0 = beginning
+- Position 1 = second node
+- Position 2 = third node
+
+--------------------------------------------------
+
+EXAMPLE
+--------------------------------------------------
+
+Initial list:
+
+16 -> 13 -> 7
+
+data = 1
+position = 2
+
+Answer:
+
+16 -> 13 -> 1 -> 7
+
+--------------------------------------------------
+
+WHAT IS THE QUESTION REALLY ASKING?
+--------------------------------------------------
+
+Find the node BEFORE the insertion position.
+
+Create a new node and connect it to the list.
+
+--------------------------------------------------
+
+PATTERN TO RECOGNIZE
+--------------------------------------------------
+
+Words like:
+- linked list
+- insert a node
+- position
+- next pointer
+
+Think:
+1. Find the previous node.
+2. Connect the new node to the next node.
+3. Connect the previous node to the new node.
+
+--------------------------------------------------
+
+HACKERRANK TEMPLATE
+--------------------------------------------------
+
+def insertNodeAtPosition(llist, data, position):
+    # Write your code here
+
+--------------------------------------------------
+
+EXPANDED ANSWER
+--------------------------------------------------
+
+def insertNodeAtPosition(llist, data, position):
+
+    new_node = SinglyLinkedListNode(data)
+
+    # Handle inserting at the beginning.
+    if position == 0:
+        new_node.next = llist
+        return new_node
+
+    # Start at the head.
+    current = llist
+
+    # Find the node before the target position.
+    for _ in range(position - 1):
+        current = current.next
+
+    # Connect the new node to the rest of the list.
+    new_node.next = current.next
+
+    # Connect the previous node to the new node.
+    current.next = new_node
+
+    return llist
+
+--------------------------------------------------
+
+SHORT ANSWER (SRE PREFERRED)
+--------------------------------------------------
+
+def insertNodeAtPosition(llist, data, position):
+
+    new_node = SinglyLinkedListNode(data)
+
+    if position == 0:
+        new_node.next = llist
+        return new_node
+
+    current = llist
+
+    for _ in range(position - 1):
+        current = current.next
+
+    new_node.next = current.next
+    current.next = new_node
+
+    return llist
+
+--------------------------------------------------
+
+WHY THE SHORT ANSWER WORKS
+--------------------------------------------------
+
+Start with:
+
+16 -> 13 -> 7
+
+data = 1
+position = 2
+
+STEP 1: Create the new node.
+
+new_node = SinglyLinkedListNode(1)
+
+The new node initially points to None.
+
+STEP 2: Find the previous node.
+
+current starts at 16.
+
+The loop runs position - 1 times:
+2 - 1 = 1 time.
+
+current moves to 13.
+
+16 -> 13 -> 7
+      ^
+    current
+
+STEP 3: Connect the new node to the rest of the list.
+
+new_node.next = current.next
+
+The new node now points to 7.
+
+1 -> 7
+
+STEP 4: Connect the previous node to the new node.
+
+current.next = new_node
+
+The list becomes:
+
+16 -> 13 -> 1 -> 7
+
+STEP 5: Return the head.
+
+return llist
+
+The head is still 16.
+
+SPECIAL CASE:
+If position == 0, the new node becomes the head.
+
+--------------------------------------------------
+
+INTERVIEW EXPLANATION
+--------------------------------------------------
+
+I create the new node first.
+
+If the position is zero, I connect the new node to the
+current head and return the new node as the new head.
+
+Otherwise, I traverse to the node immediately before the
+target position. I point the new node to the next node,
+then update the previous node's next pointer to the new node.
+
+Finally, I return the original head.
+
+--------------------------------------------------
+
+WHEN TO USE THIS PATTERN
+--------------------------------------------------
+
+Use this approach when:
+- Inserting into a linked list
+- Adding a node at a specific position
+- Updating next pointers
+- Traversing nodes with current.next
+
+Always handle position 0 because the head changes.
+
+--------------------------------------------------
+
+MEMORY TRICK
+--------------------------------------------------
+
+Find the node BEFORE the insertion point.
+
+Remember these two lines:
+
+new_node.next = current.next
+current.next = new_node
+
+Read them as:
+
+1. New node points forward.
+2. Previous node points to new node.
+
+For position 0:
+
+new_node.next = llist
+return new_node
+
+--------------------------------------------------
+
+TIME COMPLEXITY
+--------------------------------------------------
+
+O(n)
+
+You may need to traverse most of the list to find the position.
+
+--------------------------------------------------
+
+SPACE COMPLEXITY
+--------------------------------------------------
+
+O(1) auxiliary space
+
+Only a fixed number of extra references are used.
+The new node is required for the insertion.
+==================================================

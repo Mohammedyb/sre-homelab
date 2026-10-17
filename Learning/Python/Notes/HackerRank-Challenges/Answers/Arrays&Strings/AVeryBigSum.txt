@@ -1,0 +1,131 @@
+==================================================
+HACKERRANK: A VERY BIG SUM
+==================================================
+
+QUESTION
+--------------------------------------------------
+
+You are given an array of numbers.
+
+Return the sum of all numbers in the array.
+
+Example:
+
+[1, 2, 3, 4, 5]
+
+Answer:
+
+15
+
+--------------------------------------------------
+
+WHAT IS THE QUESTION REALLY ASKING?
+--------------------------------------------------
+
+Add everything together.
+
+That's it.
+
+--------------------------------------------------
+
+PATTERN TO RECOGNIZE
+--------------------------------------------------
+
+Words like:
+
+- total
+- sum
+- add all
+- aggregate
+
+Should make you think:
+
+sum()
+
+--------------------------------------------------
+
+HACKERRANK TEMPLATE
+--------------------------------------------------
+
+def aVeryBigSum(ar):
+    # Write your code here
+
+--------------------------------------------------
+
+EXPANDED ANSWER
+--------------------------------------------------
+
+def aVeryBigSum(ar):
+
+    total = 0
+
+    # add every number to total
+    for number in ar:
+        total += number
+
+    return total
+
+--------------------------------------------------
+
+SHORT ANSWER (SRE PREFERRED)
+--------------------------------------------------
+
+def aVeryBigSum(ar):
+
+    # add everything together
+    return sum(ar)
+
+--------------------------------------------------
+
+WHY THE SHORT ANSWER WORKS
+--------------------------------------------------
+
+sum(ar)
+
+automatically does:
+
+1 + 2 + 3 + 4 + 5
+
+behind the scenes.
+
+Python is already doing the loop for us.
+
+--------------------------------------------------
+
+INTERVIEW EXPLANATION
+--------------------------------------------------
+
+Question:
+
+Find the total of all numbers.
+
+Answer:
+
+Use sum().
+
+--------------------------------------------------
+
+MEMORY TRICK
+--------------------------------------------------
+
+Need a total?
+
+Use:
+
+sum()
+
+--------------------------------------------------
+
+TIME COMPLEXITY
+--------------------------------------------------
+
+O(n)
+
+Must visit every number once.
+
+--------------------------------------------------
+
+SPACE COMPLEXITY
+--------------------------------------------------
+
+O(1)

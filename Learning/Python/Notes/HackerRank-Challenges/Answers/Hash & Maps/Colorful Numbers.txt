@@ -1,0 +1,151 @@
+==================================================
+HACKERRANK / CODING PATTERN: COLORFUL NUMBERS
+==================================================
+
+QUESTION
+--------------------------------------------------
+
+Given a number, determine whether it is colorful.
+
+A number is colorful if the product of every contiguous
+sequence of its digits is unique.
+
+Return:
+- True if every product is different.
+- False if any product appears more than once.
+
+--------------------------------------------------
+
+EXAMPLE 1
+--------------------------------------------------
+
+Number:
+3245
+
+Contiguous sequences and their products:
+
+3       = 3
+2       = 2
+4       = 4
+5       = 5
+32      = 3 * 2 = 6
+24      = 2 * 4 = 8
+45      = 4 * 5 = 20
+324     = 3 * 2 * 4 = 24
+245     = 2 * 4 * 5 = 40
+3245    = 3 * 2 * 4 * 5 = 120
+
+Every product is different.
+
+Answer:
+True (Colorful)
+
+--------------------------------------------------
+
+EXAMPLE 2
+--------------------------------------------------
+
+Number:
+326
+
+Contiguous sequences and their products:
+
+3       = 3
+2       = 2
+6       = 6
+32      = 3 * 2 = 6
+26      = 2 * 6 = 12
+326     = 3 * 2 * 6 = 36
+
+The product 6 appears twice:
+- The digit 6
+- The sequence 32, because 3 * 2 = 6
+
+Answer:
+False (Not Colorful)
+
+--------------------------------------------------
+
+WHAT IS THE QUESTION REALLY ASKING?
+--------------------------------------------------
+
+Generate every possible continuous sequence of digits.
+
+Multiply the digits in each sequence.
+
+If any product repeats, return False.
+If every product is unique, return True.
+
+--------------------------------------------------
+
+PATTERN TO RECOGNIZE
+--------------------------------------------------
+
+Words like:
+
+- every contiguous subsequence
+- all possible continuous groups
+- calculate the product of each group
+- detect duplicate results
+
+Should make you think:
+
+Use nested loops to generate every sequence.
+Use a set to remember products already seen.
+
+--------------------------------------------------
+
+HACKERRANK TEMPLATE
+--------------------------------------------------
+
+def is_colorful(number):
+    num_str = str(number)
+    length = len(num_str)
+    product_set = set()
+
+    for i in range(length):
+        product = 1
+
+        for j in range(i, length):
+            product *= int(num_str[j])
+
+            if product in product_set:
+                return False
+
+            product_set.add(product)
+
+    return True
+
+--------------------------------------------------
+
+EXPANDED ANSWER
+--------------------------------------------------
+
+def is_colorful(number):
+
+    # Convert the number to a string so we can access each digit.
+    num_str = str(number)
+
+    # Find how many digits the number contains.
+    length = len(num_str)
+
+    # Store every product we calculate.
+    product_set = set()
+
+    # Choose the starting position of each sequence.
+    for i in range(length):
+
+        # Reset the product for the new starting position.
+        product = 1
+
+        # Extend the sequence one digit at a time.
+        for j in range(i, length):
+
+            # Multiply the current product by the next digit.
+            product *= int(num_str[j])
+
+            # If this product already exists, it is not colorful.
+            if product in product_set:
+                return False
+
+            # Save

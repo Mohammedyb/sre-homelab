@@ -1,0 +1,240 @@
+==================================================
+HACKERRANK: ICE CREAM PARLOR
+==================================================
+
+QUESTION
+--------------------------------------------------
+
+Two friends pool their money to buy two different ice cream
+flavors.
+
+Given:
+- m = the total amount of money they have
+- arr = a list of ice cream prices
+
+Find the two flavors whose prices add up to exactly m.
+
+Return the indices of those two flavors in ascending order.
+
+HackerRank uses 1-based indexing, meaning the first item
+has index 1 instead of index 0.
+
+--------------------------------------------------
+
+EXAMPLE
+--------------------------------------------------
+
+m = 4
+
+arr = [1, 4, 5, 3, 2]
+
+The two prices that add up to 4 are:
+
+1 + 3 = 4
+
+Their indices are:
+- Price 1 is at index 1.
+- Price 3 is at index 4.
+
+Answer:
+
+1 4
+
+--------------------------------------------------
+
+WHAT IS THE QUESTION REALLY ASKING?
+--------------------------------------------------
+
+Find two different positions in the array whose values
+add up to the target amount m.
+
+Return the positions, NOT the prices.
+
+--------------------------------------------------
+
+PATTERN TO RECOGNIZE
+--------------------------------------------------
+
+Words like:
+
+- two numbers add up to a target
+- find two values that equal a sum
+- return the indices
+- find a matching pair
+
+Should make you think:
+
+Use a dictionary to remember values already seen.
+
+This is the Two Sum pattern.
+
+For each price:
+
+needed = m - price
+
+If needed is already in the dictionary, you found the pair.
+
+--------------------------------------------------
+
+HACKERRANK TEMPLATE
+--------------------------------------------------
+
+def icecreamParlor(m, arr):
+    seen = {}
+
+    for i, price in enumerate(arr):
+        needed = m - price
+
+        if needed in seen:
+            return [seen[needed], i + 1]
+
+        seen[price] = i + 1
+
+--------------------------------------------------
+
+EXPANDED ANSWER
+--------------------------------------------------
+
+def icecreamParlor(m, arr):
+
+    # Store each price and its 1-based index.
+    seen = {}
+
+    # Loop through the prices and their 0-based indices.
+    for i, price in enumerate(arr):
+
+        # Calculate the price needed to reach the total amount.
+        needed = m - price
+
+        # Check whether we have already seen the needed price.
+        if needed in seen:
+
+            # Return the earlier index and the current index.
+            # Add 1 because HackerRank uses 1-based indexing.
+            return [seen[needed], i + 1]
+
+        # Remember this price and its 1-based index.
+        seen[price] = i + 1
+
+--------------------------------------------------
+
+SHORT ANSWER
+--------------------------------------------------
+
+def icecreamParlor(m, arr):
+    seen = {}
+
+    for i, price in enumerate(arr):
+        needed = m - price
+
+        if needed in seen:
+            return [seen[needed], i + 1]
+
+        seen[price] = i + 1
+
+--------------------------------------------------
+
+WHY THE SHORT ANSWER WORKS
+--------------------------------------------------
+
+Example:
+
+m = 4
+arr = [1, 4, 5, 3, 2]
+
+Step 1:
+Price = 1
+Needed = 4 - 1 = 3
+
+We have not seen 3, so save price 1 at index 1.
+
+Step 2:
+Price = 4
+Needed = 4 - 4 = 0
+
+We have not seen 0, so save price 4 at index 2.
+
+Step 3:
+Price = 5
+Needed = 4 - 5 = -1
+
+We have not seen -1, so save price 5 at index 3.
+
+Step 4:
+Price = 3
+Needed = 4 - 3 = 1
+
+Price 1 is already saved at index 1.
+
+We found the pair!
+
+Return:
+
+[1, 4]
+
+We check for the needed price BEFORE saving the current
+price. This prevents using the same flavor position twice.
+
+--------------------------------------------------
+
+INTERVIEW EXPLANATION
+--------------------------------------------------
+
+“I loop through the prices and store each price with its
+index in a dictionary.
+
+For each price, I calculate the difference between the
+target amount and the current price.
+
+If that difference is already in the dictionary, I have
+found the two flavors and return their indices.
+
+This lets me solve the problem in one pass instead of
+checking every possible pair.”
+
+--------------------------------------------------
+
+WHEN TO USE THIS PATTERN
+--------------------------------------------------
+
+Use this approach when:
+
+- Two numbers must add up to a target.
+- You need to return the indices of the numbers.
+- You want to avoid checking every possible pair.
+- A dictionary can help you quickly find a matching value.
+
+--------------------------------------------------
+
+MEMORY TRICK
+--------------------------------------------------
+
+TARGET - CURRENT = NEEDED
+
+If NEEDED is already in the dictionary, you found the pair.
+
+Remember:
+- Return indices, not prices.
+- Add 1 to Python's index for HackerRank's 1-based indexing.
+- Check before saving the current price.
+
+--------------------------------------------------
+
+TIME COMPLEXITY
+--------------------------------------------------
+
+O(n) average time.
+
+Each price is processed once, and dictionary lookups take
+O(1) time on average.
+
+--------------------------------------------------
+
+SPACE COMPLEXITY
+--------------------------------------------------
+
+O(n)
+
+The dictionary may store up to n prices and their indices.
+
+==================================================
